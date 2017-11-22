@@ -1,0 +1,6917 @@
+//  -------------------------------------------      MAIN STYLE
+
+*::-webkit-input-placeholder
+  color: #757f8e
+  opacity: 0.8
+  font-style: italic
+
+
+*:-moz-placeholder 
+  color: #757f8e
+  opacity: 0.8
+  font-style: italic
+
+*:-ms-input-placeholder
+  color: #757f8e
+  opacity: 0.8
+  font-style: italic  
+
+
+body
+  input:focus:required:invalid, textarea:focus:required:invalid, input:required:valid, textarea:required:valid
+
+
+
+#loader-wrapper 
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 3000
+
+
+  #loader 
+    display: block
+    position: relative
+    left: 50%
+    top: 50%
+    width: 150px
+    height: 150px
+    margin: -75px 0 0 -75px
+    border-radius: 50%
+    border: 3px solid transparent
+    border-top-color: #fff
+    z-index: 1001
+    animation: spin 2s linear infinite
+    
+    &:before 
+      content: ""
+      position: absolute
+      top: 5px
+      left: 5px
+      right: 5px
+      bottom: 5px
+      border-radius: 50%
+      border: 3px solid transparent
+      border-top-color: #fff
+      animation: spin 3s linear infinite
+    
+    
+    &:after 
+      content: ""
+      position: absolute
+      top: 15px
+      right: 15px
+      left: 15px
+      bottom: 15px
+      border-radius: 50%
+      border: 3px solid transparent
+      border-top-color: #fff
+      animation: spin 1.5s linear infinite
+    
+  
+
+#loader-wrapper .loader-section 
+  position: fixed
+  top: 0
+  width: 100%
+  height: 100%
+  background: #bf0d3d
+  z-index: 1000
+  transform: translateX(0)
+
+
+  #loader-wrapper .loader-section.section-left 
+    left: 0
+  
+
+  #loader-wrapper .loader-section.section-right 
+    right: 0
+  
+
+// Animation
+@keyframes spin 
+  0%   
+    transform: rotate(0deg)
+  
+  100% 
+    transform: rotate(360deg)
+  
+
+
+// Loaded
+.loaded #loader-wrapper .loader-section.section-left 
+  transform: translateX(-100%)
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000)
+
+
+.loaded #loader-wrapper .loader-section.section-right 
+  transform: translateX(100%)
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000)
+
+
+.loaded #loader 
+  opacity: 0
+  transition: all 0.3s ease-out
+
+
+.loaded #loader-wrapper
+  visibility: hidden
+  transform: translateY(-100%)
+  transition: all 0.3s 1s ease-out
+
+body
+  font-family: sans-serif
+  font-size: 16px
+  min-width: 320px
+  position: relative
+  line-height: 1.4
+  font-family: 'GothamPro'
+  overflow-x: hidden
+  background-color: #fff
+  font-weight: 400
+  margin: 0
+  color: #212730
+  display: block
+  margin: 0 auto
+
+.hidden
+  display: none
+
+a
+  font-weight: 400
+
+ul li
+  list-style: none
+
+a
+  text-decoration: none
+  -moz-transition: all 0.2s ease
+  -webkit-transition: all 0.2s ease
+  transition: all 0.2s ease
+  outline: none
+  color: #bf0d3e
+  &:hover, &:active, &:focus
+    text-decoration: none
+    -moz-transition: all 0.2s ease
+    -webkit-transition: all 0.2s ease
+    transition: all 0.2s ease
+    outline: none
+
+h3
+  font-size: 24px
+  font-weight: 500
+ 
+
+h1
+  font-size: 30px
+  color: #212730
+  font-weight: 500
+h2
+  font-size: 36px
+  font-weight: 500
+
+p
+  
+  font-size: 14px
+
+.content 
+  p
+    font-size: 14px
+    margin: 0 0 15px 0
+    color: #757f8e
+    line-height: 24px
+  h3
+    font-size: 24px
+    font-weight: 500
+    margin-bottom: 10px
+
+ul, menu, dir 
+    display: block
+    list-style-type: disc
+    -webkit-margin-before: 0em
+    -webkit-margin-after: 0em
+    -webkit-margin-start: 0px
+    -webkit-margin-end: 0px
+    -webkit-padding-start: 0px
+    padding: 0
+    margin: 0
+    
+
+
+
+
+.pad_0
+  padding: 0!important
+  margin-right: 0!important
+  margin-left: 0!important
+
+.marg_0
+  margin: 0!important    
+
+input
+  &[type="email"], &[type="number"], &[type="search"], &[type="text"], &[type="tel"], &[type="url"], &[type="password"]
+    -webkit-appearance: none
+    -moz-appearance: none
+    -ms-appearance: none
+    -o-appearance: none
+    appearance: none
+
+textarea
+  -webkit-appearance: none
+  -moz-appearance: none
+  -ms-appearance: none
+  -o-appearance: none
+  appearance: none
+
+input
+  &[type="email"]:focus, &[type="number"]:focus, &[type="search"]:focus, &[type="text"]:focus, &[type="tel"]:focus, &[type="url"]:focus:focus, &[type="password"]:focus
+    outline: none
+
+textarea:focus
+  outline: none
+
+\::-webkit-input-placeholder, ::-moz-placeholder, :-moz-placeholder, :-ms-input-placeholder
+  text-indent: 0px
+  color: #9b9b9b
+  transition: text-indent 0.3s ease
+
+\:focus
+  &::-webkit-input-placeholder, &::-moz-placeholder, &:-moz-placeholder, &:-ms-input-placeholder
+    text-indent: 500px
+    transition: text-indent 0.3s ease
+
+textarea
+  &::-webkit-input-placeholder, &::-moz-placeholder, &:-moz-placeholder, &:-ms-input-placeholder
+    text-indent: 0px
+  &:focus
+    &::-webkit-input-placeholder, &::-moz-placeholder, &:-moz-placeholder, &:-ms-input-placeholder
+      text-indent: 0px
+
+\::-webkit-scrollbar
+  width: 10px
+  margin-right: 10px
+  cursor: pointer
+
+\::-webkit-scrollbar-track
+  -webkit-border-radius: 5px
+  border-radius: 0px
+  margin-right: 6px
+
+\::-webkit-scrollbar-thumb
+  -webkit-border-radius: 5px
+  border-radius: 0px
+  background: #f3f4f7
+  margin-right: 10px
+  &:window-inactive
+    background: #f3f4f7
+
+
+
+.main_wr 
+  padding: 0 30px
+  width: calc(100% - 545px)
+  position: relative
+  float: right
+  margin-bottom: 53px
+
+.rub
+  font-family: ALS Rubl
+  font-style: normal
+
+
+.width_25
+  width: 25%
+  float:  left
+  display: block
+
+
+.width_50
+  width: 50%
+  float:  left
+  display: block  
+
+.visible
+  display: block!important
+
+// header
+header
+  display: block
+  width: calc(100% - 10px)
+  background-color: #f3f4f7
+  margin-left: -30px
+  padding: 20px 30px 9px
+  margin-bottom: 50px
+
+
+.header_fixed
+  display: block
+  width: 1365px
+  background-color: #f3f4f7
+  margin-left: -30px
+  position: fixed
+  top: 0
+  z-index: 1001
+  .header_fixed_hidden
+    display: none!important
+  .hidden_header_fixed_phone
+    display: none  
+  .button_open_all_about_shop
+    display: inline  
+  .header_phone_block > span 
+    font-size: 24px
+    font-weight: 500
+    text-align: center
+    display: block
+    width: 100%
+    display: inline-block
+    float: left
+    width: auto
+    
+    margin-left: 24px
+    margin-right: 18px
+  .header_phone_block a 
+    position: relative
+    top: 6px
+    margin: -7px auto 0
+    padding: 8px 14px;
+
+  .header_serch 
+    
+    margin-top: 15px
+    margin-bottom: -33px
+
+
+
+
+.header_navigation
+  a
+    font-size: 13px
+    font-weight: 500
+    font-size: 13px
+    text-transform: uppercase
+    color: #9da5b4
+    margin-bottom: 4px
+    line-height: 14px
+    display: inline-block
+    border-bottom: 1px solid #e0e0e0
+
+.header_phone_block
+  span
+    font-size: 24px
+    font-weight: 500
+    text-align: center
+    display: block
+    width: 100%
+  p 
+    margin: 0
+    font-size: 12px
+    color: #79818e 
+    text-align: center
+    display: block
+    font-style: italic
+    font-weight: 200
+  a
+    font-size: 12px
+    color: #fff  
+    display: table
+    margin: 20px auto 0
+    background-color: #bdc1cb
+    padding: 6px 14px
+    border-radius: 16px
+    text-transform: uppercase
+
+    span 
+      display: inline-block
+      font-size: 15px
+      width: auto
+
+.header_about_shop
+  padding-left: 30px
+  &.open_hidden_header_shop_time
+    
+    background-color: #fff
+    margin-top: -10px
+    padding-top: 10px
+    border-radius: 10px
+    padding-bottom: 10px
+    position: absolute
+    box-shadow: 0px 0px 9px -1px rgba(0, 0, 0, 0.15)
+    z-index: 1000
+    width: 165px
+  .header_shop_name
+    color: #212730
+    font-size: 13px
+    font-weight: 400
+    margin: 0
+  .header_shop_metro
+    display: block
+    font-size: 11px
+    height: 12px
+    color: #a5aab5
+    margin-top: -2px  
+
+  .header_shop_phone
+    width: 100%
+    display: inline-block
+    margin-top: 5px
+    margin-bottom: 7px
+    span
+      font-size: 20px
+      font-weight: 400
+      color: #FFF
+      width: 55px
+      // background-color: #bf0d3f
+      display: inline-block
+      float: left
+      text-align: center
+      margin-right: 5px
+      position: relative
+      top: 1px
+      background-image: url(../img/form_tel.svg)
+      background-position: center
+      background-repeat: no-repeat
+      background-size: 100%
+      
+    p 
+      margin: 0
+      font-size: 14px
+      font-weight: 700 
+      line-height: 15px
+  .header_shop_mail
+    font-size: 12px
+    line-height: 15px
+    color: #bf0d3e
+    margin: 0
+    display: block
+    margin-top: 0
+  .header_shop_time
+    font-size: 11px
+    line-height: 15px
+    color: #79818e
+    margin: 0
+
+
+  .hidden_header_shop_time 
+    margin-top: 5px
+    display: none
+    p 
+      color: #bf0d3e
+      margin: 0  
+
+      font-size: 12px
+      line-height: 15px
+    
+    .button_close_all_about_shop
+      display: inline-block 
+
+
+.button_open_all_about_shop
+  display: none
+  span
+    font-size: 6px
+    margin-left: 4px
+    cursor: pointer
+
+.header_shop_time
+  .button_open_all_about_shop
+    display: inline
+
+.button_close_all_about_shop 
+  color: #bdc1cb
+  font-size: 12px
+  cursor: pointer
+  display: none
+  span
+    transform: rotateX(-180deg)
+    display: inline-block
+    font-size: 6px
+
+
+      
+.header_control_block
+  display: block
+  .personal_area
+    background-color: #fff
+    font-size: 12px
+    color: #a5aab5
+    padding: 8px 23px
+    border-radius: 20px
+    display: table
+    margin: 0 auto
+    position: relative
+    z-index: 302
+    cursor: pointer
+    box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.15)
+    &.active
+      box-shadow: none
+    span
+      color: #d4d8e0
+      margin-right: 2px
+  .control_dealer
+    font-size: 12px
+    display: block
+    margin: 15px
+    text-align: center
+    color: #79818e  
+
+  .footer_but_basket
+    font-size: 18px
+    font-weight: 500
+    color: #000
+    margin-right: 0
+    position: relative
+    display: table
+    margin: 20px auto 0
+    z-index: 300
+    cursor: pointer
+    img
+      width: 22px
+      position: relative
+      top: 2px
+      margin-right: 7px;
+
+    .footer_but_basket_colproduct  
+      position: absolute
+      width: 17px
+      font-size: 8px
+      height: 17px
+      background-color: #bf0d3e
+      color: #fff
+      font-weight: 400
+      line-height: 17px
+      text-align: center
+      border-radius: 50%
+      left: 13px
+  
+
+
+.header_tablet_logo
+
+// ----------------------------------------------------------------     SIteBAR   -----------------------------------------------------------------------
+
+.sitebar
+  height: 100vh
+  background-color: #212730
+  position: fixed
+  width: 485px
+  z-index: 1002
+  box-shadow: 4px 7px 11px rgba(0, 0, 0, 0.09)
+
+  .sitebar_logo
+    height: 163px
+    width: calc(100% - 40px)
+    background: #fff
+    padding: 20px
+    display: block
+    img
+      width: 385px
+      margin-top: 28px
+      margin-left: 24px
+    
+.sitebar_nav
+  display: block
+  width: 100%
+  margin-top: 30px
+  li.mega_menu
+    display: block
+    width: 100%
+    position: relative
+    &.active
+      position: relative
+      a
+        background-color: #bf0d3e
+        span
+          color: #fff
+    a  
+      width: calc(100% - 70px)
+      padding: 10px 35px
+      background-color: transparent
+      color: #fff
+      font-weight: 500
+      
+      display: block
+      &:hover
+        background-color: #bf0d3e
+        span
+          color: #fff
+     
+      p 
+        margin: 0
+        color: #fff
+        position: relative
+        font-weight: 400
+        font-size: 16px
+        i
+          font-size: 20px
+          text-align: right
+          float: right
+          span
+            font-size: 33px
+      span
+        color: #4e5560
+        font-size: 11px
+        margin-top: -2px
+        display: block
+
+
+
+    
+    .mega_menu_item   
+      background-color: #bf0d3e
+      right: -350px
+      top: 0px
+      display: block
+      position: absolute
+      width: 350px
+      padding: 10px 0px 15px
+      display: none
+      z-index: 1001
+      li
+        display: block
+        width: 100%
+        
+        a  
+          width: calc(100% - 50px)
+          padding: 7px 25px
+          background-color: transparent
+          color: #fff
+          display: block
+          -moz-transition: all 0.4s ease
+          -webkit-transition: all 0.4s ease
+          transition: all 0.4s ease
+
+          &:hover
+            color: #f15e81
+            p
+              color: #f15e81
+              font-size: 14px
+          &:hover:before
+            content: ""
+            width: 17px
+            height: 2px
+            display: inline-block
+            background-color: #f15e81
+            position: relative
+            top: -4px
+            margin-right: 4px
+            moz-transition: all 0.4s ease
+            -webkit-transition: all 0.4s ease
+            transition: all 0.4s ease
+          p 
+            margin: 0
+            font-weight: 400
+            position: relative
+            font-size: 14px
+            
+            display: inline-block
+            span
+              color: #f15e81
+              font-size: 11px
+              display: inline-block
+        .mega_menu_item_step2 
+          background-color: #f3f4f7
+          right: -400px
+          top: 0px
+          display: block
+          position: absolute
+          width: 400px
+          padding: 20px 0px
+          display: none
+          z-index: 1001
+          height: 310px
+          
+          img
+            width: calc(100% - 40px)
+            display: table
+            margin: 0 auto
+            height: 100px
+            box-shadow: 2px 0px 39px -9px rgba(0,0,0,0.25)
+          ul 
+            height: 179px
+            overflow-y: auto
+            width: calc(100% - 40px)
+            &::-webkit-scrollbar
+              width: 5px
+              margin-right: 10px
+              cursor: pointer
+            &::-webkit-scrollbar-thumb
+              -webkit-border-radius: 5px
+              border-radius: 0px
+              background: #d0d4dd
+              margin-right: 10px
+              &:window-inactive
+                background: #d0d4dd
+           
+            margin: 20px auto
+            li
+              display: block
+              width: 100%
+              position: relative
+              a  
+                width: 100%
+                padding: 0
+                background-color: transparent
+                color: #000
+                display: block
+                -moz-transition: all 0.4s ease
+                -webkit-transition: all 0.4s ease
+                transition: all 0.4s ease
+                margin-bottom: 4px
+
+                &:hover
+                  color: #f15e81
+                  p
+                    color: #f15e81
+                  span
+                    color: rgba(189, 193, 203, 0.76)
+
+                &:hover:before
+                  content: ""
+                  width: 17px
+                  height: 2px
+                  display: inline-block
+                  background-color: #f15e81
+                  position: relative
+                  top: -4px
+                  margin-right: 4px
+                  moz-transition: all 0.4s ease
+                  -webkit-transition: all 0.4s ease
+                  transition: all 0.4s ease
+                p 
+                  margin: 0
+                  font-weight: 400
+                  position: relative
+                  color: #5f5f5f
+                  display: inline-block
+                  span
+                    color: rgba(189, 193, 203, 0.76)
+                    font-size: 11px
+                    display: inline-block      
+
+.display
+  display: block!important
+
+
+.main_news
+  display: block
+  .tabs_main 
+    width: 100%
+    display: inline-block
+    margin-bottom: 25px
+    li
+      width: 100%
+      display: inline-block
+      float: left
+      width: auto
+      margin-right: 40px
+      a
+        font-size: 16px
+        font-weight: 400
+        text-decoration: none
+        color: #bababa
+
+        &.active
+          border-bottom: 3px solid #bf0d3e;
+          color: #111
+          font-weight: 500
+        &:hover
+          color: #111
+          
+
+
+.main_news_item
+  display: block
+  width: 100%
+  a
+    display: block
+    width: 100%
+    background-color: #f3f4f7
+    height: 130px
+
+    display: flex
+  
+    flex-direction: row
+   
+    flex-wrap: nowrap
+   
+    justify-content: space-between
+   
+    align-content: center
+   
+    align-items: center
+    &:hover
+      background-color: #fff
+      box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.15)
+    span
+      color: #bababa
+      font-size: 14px
+      display: inline-block
+      float: left
+      width: 30%
+      text-align: center
+     
+      b
+        font-weight: 400
+        font-size: 40px
+    p
+      font-size: 16px
+      color: #111  
+      display: inline-block
+      float: left 
+      width: calc(70% - 20px) 
+      
+      vertical-align: center
+      padding: 0 10px
+      margin: 0
+
+.tab_content > a
+  font-size: 14px
+  margin-top: 20px
+  text-decoration: underline
+  display:  block
+
+
+.main_sale_item
+  display: block
+  width: 100%
+  a
+    display: block
+    width: 100%
+    background-color: #f3f4f7
+    height: 130px
+
+    display: flex
+  
+    flex-direction: row
+   
+    flex-wrap: nowrap
+   
+    justify-content: space-between
+   
+    align-content: center
+   
+    align-items: center
+    &:hover
+      background-color: #fff
+      box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.15)
+    span.main_sale_item_img
+      
+      display: inline-block
+      float: left
+      width: 30%
+      text-align: center
+      img
+        width: 100%
+        height: 123px
+        object-fit: cover
+
+    div
+      font-size: 16px
+      color: #111  
+      display: inline-block
+      float: left 
+      width: calc(70% - 20px) 
+      font-weight: 500
+      vertical-align: center
+      padding: 0 10px
+      margin: 0
+      p.main_sale_item_date
+        display: block
+        font-weight: 400
+        margin: 5px 0
+        span
+          font-size: 24px
+          font-weight: 500
+          color: #bf0d3e
+          margin-left: 10px
+
+
+.main_obzor_item
+  display: block
+  width: 100%
+  
+  
+  img
+    width: 100%
+    height: 123px
+    object-fit: cover
+
+
+  a
+    display: initial
+    font-weight: 500
+    margin: 5px 0
+    font-size: 16px
+    
+    color: #111
+    &:hover
+      border-bottom: 1px solid #ccc
+      text-decoration: none
+  span
+    font-size: 12px
+    font-weight: 400
+    color: #bababa
+    margin-left: 
+    margin: 5px 0
+    width: 100%
+    display: block
+
+
+.main_bigbaner_slider
+  display: block
+  width: 100%
+  margin: 30px 0
+  img
+    width: 100%
+    object-fit: cover
+  .owl-dots
+    display: inline-block
+    position: absolute
+    
+    top: 45%
+    right: 46px
+    .owl-dot
+      width: 13px
+      height: 13px
+      background-color: #353940
+      border-radius: 50%  
+      margin-right: 5px
+      float: left
+      display: inline-block
+      &.active
+        background-color: #61646a
+        width: 13px
+        height: 25px
+        border-radius: 20px
+        margin-top: -5.5px;
+
+
+#partner_slider  
+  padding: 20px 60px
+  border: 15px solid #f3f4f7
+  padding-right: 80px
+  margin-top: 100px
+  position: relative
+  display: block
+  margin-bottom: 50px
+
+  &:before
+    content: "БРЕНДЫ"
+    font-size: 46px
+    position: absolute
+    top: -60px
+    font-weight: 500
+    letter-spacing: 3px
+    left: -17px
+    color: #f3f4f7
+
+  .partner_slider_wr
+    display: block
+    width: 100%
+    margin: 30px 0
+    position: relative
+    img
+      filter: grayscale(100%)
+      height: 110px
+      width: 150px
+      opacity: 0.25
+      object-fit: contain
+      &:hover
+
+        filter: grayscale(0%)
+        opacity: 1
+    .owl-nav 
+      display: inline-block
+      position: absolute
+      top: 24px
+      right: -26px
+      width: 20px
+      transform: rotateX(180deg)
+     
+     
+      .owl-prev
+        display: inline-block
+
+        .sl_nav 
+          display: inline-block
+          font-size: 30px
+          color: #eaeaea
+          border-top: 10px solid transparent
+          border-right: 17px solid #e8eaf2
+          border-bottom: 10px solid transparent
+          &:hover 
+            border-right: 17px solid #bcc5d1
+      .owl-next 
+        display: inline-block
+        .sl_nav 
+          display: inline-block
+          font-size: 30px
+          color: #eaeaea
+          margin-left: 10px
+          border-top: 10px solid transparent
+          border-left: 17px solid #e8eaf2
+          border-bottom: 10px solid transparent
+          margin-top: 8px
+          margin-left: 1px  
+          margin-bottom: 4px
+          &:hover 
+            border-left: 17px solid #bcc5d1
+     
+#seo_text
+  margin-top: 20px
+
+  p 
+     padding-right: 50px 
+  .seo_text_slider_wr
+    padding-left: 0px 
+    display: block
+    .seo_text_slider
+      display: block
+      width: 100%
+      margin: 30px 0
+      img
+        width: 100%
+        object-fit: cover
+      .owl-dots
+        display: inline-block
+        position: absolute
+        bottom: 25px
+        right: 30px
+        .owl-dot
+          width: 13px
+          height: 13px
+          background-color: rgba(255, 255, 255, 0.63)
+          border-radius: 50%  
+          margin-right: 5px
+          float: left
+          display: inline-block
+          &.active
+            background-color: #fff
+            width: 13px
+            height: 25px
+            border-radius: 20px
+            margin-top: -5.5px;
+
+// --------------------------------------------------------------------- Footer ----------------------------------------------------------------------
+
+
+footer
+  display: block
+  background-color: #79818e
+  width: calc(100% + -10px)
+  padding: 30px
+  color: #fff
+  position: relative
+  margin-left: -30px
+  &:after
+    content: ""
+    position: absolute
+    background-image: url("../img/footer_man.svg")
+    display: inline-block
+    width: 220px
+    right: 90px
+    top: 26px
+    height: 176px
+  h4
+    color: #fff
+    margin-top: 0
+    text-transform: uppercase
+    margin-bottom: 15px
+    font-weight: 500
+    letter-spacing: 1px
+  .footer_inform
+    display: block
+    width: 100%
+    a
+      font-size: 12px
+      color: #fff
+      margin-bottom: 20px
+      display: inline-block
+      float: left
+      padding-left: 20px
+      position: relative
+
+        
+      .icon 
+        font-size: 10px
+        margin-right: 5px
+        position: absolute;
+        top: 3px;
+        left: 0px
+        color: #bcc0c7
+      .icon-48 
+        font-size: 14px
+        top: 2px
+
+  .footer_company_menu      
+    a
+      font-size: 12px
+      color: #a9b0bb
+      margin-bottom: 5px
+      display: block
+  p.iswin
+    color: #fff
+    display: inline-block
+    width: 100%
+    margin-top: 40px
+    margin-bottom: 0
+    font-size: 12px
+    a
+      color: #fff
+      &:hover
+        color: #bf0d3e;
+
+
+.footer_socail_butt
+  display: block
+  width: 100%
+  li
+    display: inline-block
+    float: left
+    margin-right: 18px
+    a
+      .icon
+        font-size: 40px
+        opacity: 0.5
+        &:hover
+          opacity: 1
+
+
+
+.fixed_footer
+  display: inline-block
+  background-color: #f3f4f7
+  
+  padding: 20px 30px 6px
+  color: #fff
+  position: relative
+  margin-left: -30px
+
+  position: fixed
+  bottom: 0
+  width: 1365px
+  z-index: 1001
+
+  .descrip_site
+    display: inline-block
+    float: left
+    color: #a5aab5
+    font-size: 12px
+    margin: 0
+  .fixed_footer_main_but
+    display: inline-block
+    float: right  
+
+    .footer_but_communication
+      display: inline-block
+      float: left
+      color: #bf0d3e
+      font-size: 12px
+      text-decoration: underline
+    .footer_but_compare
+      display: inline-block
+      float: left
+      margin: 0 60px
+      p 
+        margin: 0
+        display: inline-block
+        float: left
+        color: #000000
+        font-size: 12px
+        margin-right: 4px
+        border-bottom: 1px solid #ccc
+        line-height: 13px
+      span  
+        margin: 0
+        display: inline-block
+        float: left
+        font-size: 12px
+        &.icon-44
+          font-size: 11px
+          color: #ccc
+          margin-right: 4px
+          position: relative
+          top: 3px
+
+    .footer_but_basket
+      font-size: 18px
+      font-weight: 500
+      color: #000   
+      position: relative
+      top: -7px  
+      margin-right: 20px
+      img
+        width: 22px
+        position: relative
+        top: 2px
+        margin-right: 7px;
+
+      .footer_but_basket_colproduct  
+        position: absolute
+        width: 17px
+        font-size: 8px
+        height: 15px
+        background-color: #bf0d3e
+        color: #fff
+        font-weight: 400
+        line-height: 15px
+        text-align: center
+        border-radius: 50%
+        left: 13px
+
+
+
+.icon_catalog_slider
+  display: block
+  width: 100%
+
+.icon_catalog_link
+  width: 80px
+  height: 80px
+  color: #a1a8ba
+  display: inline-block
+  border-radius: 50%
+  text-align: center
+  line-height: 88px
+  &:hover > i
+    color: #222
+  &:hover > i > svg
+    color: #222
+  &:hover + a
+    fill: #222  
+  i
+    font-size: 42px
+    color: #a1a8ba
+    
+
+.icon_catalog_link_name 
+  text-align: center
+  display: inline-block
+  width: 80px
+  color: #79818e
+  font-size: 14px
+  margin-top: 5px
+  &:hover
+    color: #222
+  &:hover .icon_catalog_link
+    color: #222  
+
+.hit_product
+  margin: 60px 0 20px
+  h1
+    color: #212730
+    margin: 0
+    margin-bottom: 16px
+
+
+
+
+.icon_catalog
+  margin-top: 20px
+
+
+       
+.product_card
+  display: block
+  background-color: #fff
+  float:  left
+  width: calc(100% - 52px)
+  position: relative
+  border: 1px solid #f3f4f7
+  padding: 30px 25px 40px
+  // height: 450px
+  -moz-transition: all 0.2s ease
+  -webkit-transition: all 0.2s ease
+  transition: all 0.2s ease
+ 
+  &:hover .product_card_hover_topelemet
+    opacity: 1
+  &:hover
+   
+   
+
+  .product_card_hover_topelemet
+    display: inline-block
+    float: left
+    width: 30%
+    font-size: 37px
+    margin-top: -11px
+    opacity: 0
+  .product_card_rating  
+    display: inline-block
+    float: left
+    width: 70% 
+    text-align: right 
+  .product_card_img
+    display: inline-block
+    width: 100%
+    img
+      width: 100%
+      height: 300px  
+      margin-bottom: 20px
+      object-fit: contain
+      &.click_availability
+        width: 30%;
+        height: 100px
+        margin-bottom: 0
+        object-fit: contain
+        display: inline-block
+        float: left
+    p
+      font-size: 16px
+      color: #000
+      display: inline-block
+      width: 100%
+      height: 64px
+      margin: 0
+      overflow-y: hidden
+      &.click_availability
+        display: inline-block
+        width: 60%
+        height: 60px
+        float: right
+        margin-top: 20px
+    
+.product_card.little_card
+  height: 424px
+  position: relative
+  .product_card_img
+    img
+      width: 100%
+      height: 171px  
+      &.click_availability
+          width: 30%;
+          height: 100px
+          object-fit: contain
+          display: inline-block
+          float: left
+          margin-bottom: 0
+
+    p
+      font-size: 16px
+      
+      &.click_availability
+        display: inline-block
+        width: 60%
+        height: 60px
+        float: right
+        margin-top: 15px
+        font-size: 14px
+
+  .product_card_price
+    display: inline-block
+    margin-bottom: 15px
+
+  .product_card_button
+    display: inline-block
+    width: 100%
+    float: left
+    position: relative
+    
+    .product_card_buttont_basket    
+      background-color: #0dbf69
+     
+      
+      transition: all 0.2s ease-in-out
+
+     
+
+      
+      .product_card_button_hiden_text
+         display: none  
+
+    
+  .product_card_block_availability
+    padding: 9px 25px;
+  
+    margin-bottom: 12px;
+    margin-top: -6px;
+    display: none;
+    position: relative;
+
+
+
+
+
+.product_card_button
+  display: inline
+  width: auto
+  float: right
+  position: relative
+  li
+    display: inline-block
+    float-left
+    margin-right: 3px
+    a 
+      width: 40px
+      height: 40px
+      background-color: #d4d8e0
+      font-size: 14px
+      color: #fff 
+      display: inline-block  
+      line-height: 43px
+      text-align: center
+      border-radius: 50%
+      cursor: pointer
+
+    .product_card_buttont_compare  
+      &:hover
+        background-color: #fed224
+    .product_card_buttont_availability  
+      font-size: 10px
+      &:hover
+        background-color: #0dbfb9
+    .product_card_buttont_credit 
+      -moz-transition: all 0.4s ease
+      -webkit-transition: all 0.3s ease-
+      transition: all 0.3s ease
+         
+      
+      &:hover
+        background-color: #ef3124 
+        width: auto
+        border-radius: 25px
+      
+        padding: 0 20px
+      .product_card_button_hiden_text
+         display: none  
+
+      &:hover .product_card_button_hiden_text
+        display: inline
+        margin-left: 5px
+        
+    .product_card_buttont_basket    
+      background-color: #0dbf69
+      -moz-transition: all 0.4s ease
+      -webkit-transition: all 0.3s ease-
+      transition: all 0.3s ease
+
+     
+       
+
+     
+      .product_card_button_hiden_text
+         display: none  
+
+      
+       
+.product_card_price
+  display: inline-block
+  width: auto
+  float: left
+  .product_card_price_actual
+    font-size: 24px
+    font-weight: 500
+    display: block
+  .product_card_price_sale 
+    font-size: 12px
+    font-weight: 400
+    display: block
+    color: #9ca4af
+    margin-bottom: -6px 
+    text-decoration: line-through
+    height: 18px
+    .product_card_price_sale_percent
+      display: inline-block
+      background-image: url(../img/form_sale.svg)
+      color: #fFF
+      font-size: 10px
+      padding: 2px 5px 0px 4px
+      margin-left: 6px
+      position: relative
+      top: -1px
+      background-repeat: no-repeat
+     
+      background-size: contain
+
+
+
+
+.product_card_block_availability
+  
+  width: 100%
+  background-color: #f6f7fa
+  padding: 29px 25px
+  margin-left: -25px
+  margin-bottom: 20px
+  margin-top: 13px
+  display: none
+  position: relative
+  p
+    font-size: 14px
+    font-weight: 500
+    margin: 0
+    display: inline-block
+    width: 100%
+    margin-bottom: 5px
+
+  ul
+    display: inline-block
+    width: 100%
+    p
+      display: inline-block
+      width: 70%
+      float: left
+      color: #79818e
+      font-size: 12px
+      font-weight: 400
+      margin: 0
+    span
+      display: inline-block
+      width: 30%
+      float: left
+      color: #79818e
+      font-size: 12px
+      &.product_none
+        color: #ef3124  
+
+      &.product_in  
+        width: 16px
+        height: 16px
+        background-color: #0dbf69
+        border-radius: 50%
+        
+        
+        span
+          color: #fff
+          font-size: 8px
+          text-align: center
+          line-height: 18px
+          width: 100%
+          display: inline-block
+
+      &.product_in_col  
+        span
+          padding: 0px 5px 
+          background-color: #31a9df
+          font-size: 12px
+          color: #fff
+          position: relative
+          top: -4px
+          width: auto
+          
+
+  .block_availability_close
+    font-size: 12px
+    color: #8b8b8b
+    position: absolute
+    right: 10px
+    top: 10px    
+    cursor: pointer
+
+
+.main_block_sales
+  margin: 60px 0 70px
+  h1
+    color: #212730
+    margin: 0
+    margin-bottom: 15px
+
+  .owl-nav 
+    display: inline-block!important 
+    position: absolute
+    top: -54px
+    right: 0
+    width: 59px
+   
+    .owl-prev 
+      display: inline-block
+
+      .sl_nav 
+        display: inline-block
+        font-size: 30px
+        color: #eaeaea
+        border-top: 10px solid transparent
+        border-right: 17px solid #e8eaf2
+        border-bottom: 10px solid transparent
+        margin-right: 13px
+        &:hover 
+          border-right: 17px solid #bcc5d1
+    .owl-next 
+      display: inline-block
+      .sl_nav 
+        display: inline-block
+        font-size: 30px
+        color: #eaeaea
+        margin-left: 10px
+        border-top: 10px solid transparent
+        border-left: 17px solid #e8eaf2
+        border-bottom: 10px solid transparent
+        margin-top: 10px
+        margin-left: 1px  
+        &:hover 
+          border-left: 17px solid #bcc5d1    
+
+
+
+.hit_product
+  width: calc(100% + 1px)
+  .owl-nav 
+    display: inline-block!important
+    position: absolute
+    top: -54px
+    right: 0
+    width: 59px
+   
+    .owl-prev 
+      display: inline-block
+
+      .sl_nav 
+        display: inline-block
+        font-size: 30px
+        color: #eaeaea
+        border-top: 10px solid transparent
+        border-right: 17px solid #e8eaf2
+        border-bottom: 10px solid transparent
+        margin-right: 13px
+        &:hover 
+          border-right: 17px solid #bcc5d1
+    .owl-next 
+      display: inline-block
+      .sl_nav 
+        display: inline-block
+        font-size: 30px
+        color: #eaeaea
+        margin-left: 10px
+        border-top: 10px solid transparent
+        border-left: 17px solid #e8eaf2
+        border-bottom: 10px solid transparent
+        margin-top: 10px
+        margin-left: 1px  
+        &:hover 
+          border-left: 17px solid #bcc5d1              
+
+.main_newproduct          
+  margin: 60px 0  10px
+  background-color: #bf0d3e
+  padding: 40px 25px 70px
+  width: 100%
+  margin-left: -30px
+  display: inline-block
+  h1
+    color: #fff
+    margin: 0
+  .owl-carousel  
+    .owl-nav 
+      display: block
+      width: 59px
+      margin: 0 auto
+      margin-top: 25px
+      position: relative
+      right: -7px
+    
+      .owl-prev 
+        display: inline-block
+
+        .sl_nav 
+          display: inline-block
+          font-size: 30px
+          color: #d56181
+          border-top: 10px solid transparent
+          border-right: 17px solid #d56181
+          border-bottom: 10px solid transparent
+          margin-right: 13px
+          &:hover 
+            border-right: 17px solid #fff
+      .owl-next 
+        display: inline-block
+        .sl_nav 
+          display: inline-block
+          font-size: 30px
+          color: #d56181
+          margin-left: 10px
+          border-top: 10px solid transparent
+          border-left: 17px solid #d56181
+          border-bottom: 10px solid transparent
+          margin-top: 10px
+          margin-left: 1px  
+          &:hover 
+            border-left: 17px solid #fff    
+
+
+
+
+.product_card_big_slider    
+  .owl-nav 
+    display: none!important
+
+.product_card_big:hover > .product_card_dost 
+  display: block
+  text-align: right
+  width: 100%
+  right: 25px
+         
+
+
+
+.product_card_big
+  display: block
+  float:  left
+  width: calc(100% - 52px)
+  position: relative
+  border: 1px solid #f3f4f7
+  padding: 29px 25px 40px
+  background-color: #fff
+  height: 425px
+  -moz-transition: all 0.2s ease
+  -webkit-transition: all 0.2s ease
+  transition: all 0.2s ease
+ 
+  &:hover
+   
+    border: 1px solid #fff
+
+ 
+  &:hover .product_card_hover_topelemet
+    opacity: 1
+  .product_card_big_topelemet 
+    display: inline-block
+    width: 100% 
+  .product_card_big_left_part
+    display: block
+    width: 50%
+    float: left
+  .product_card_big_right_part
+    display: block
+    width: calc(50% - 15px)
+    float: left  
+    padding-left: 15px
+  .product_card_hover_topelemet
+    display: inline-block
+    float: left
+    width: 30%
+    font-size: 37px
+    margin-top: -11px
+    opacity: 0
+  .product_card_rating  
+    display: inline-block
+    float: left
+    width: 70% 
+    text-align: right 
+  .product_card_img
+    display: inline-block
+    width: 100%
+    img
+      width: 100%
+      height: 300px  
+      object-fit: contain
+      
+    p
+      font-size: 24px
+      color: #000
+      display: inline-block
+      width: 100%
+      height: auto
+      margin: 0
+      font-weight: 500
+      margin-top: 15px
+      margin-bottom: 6px
+      &.click_availability
+        font-size: 14px
+        margin-bottom: 0
+        margin-top: 24px;
+    span.product_card_descript
+      font-size: 12px
+      color: #bababa
+      display: inline-block
+      width: 100%
+      margin: 15px 0 20px
+      height: 95px
+  
+  .product_card_button
+    display: inline-block
+    width: 100%
+    
+    float: left
+    position: relative
+
+    .product_card_buttont_basket    
+      background-color: #0dbf69
+      -moz-transition: all 0.4s ease
+      -webkit-transition: all 0.3s ease-
+      transition: all 0.3s ease
+
+     
+
+    
+      .product_card_button_hiden_text
+         display: none  
+
+     
+  
+
+  .product_card_price
+    display: inline-block
+    width: 100%
+    margin-bottom: 20px
+    float: left
+  .product_card_block_availability
+  
+    width: calc(100% - 50px)
+    background-color: #f6f7fa
+    padding: 14.5px 25px
+    margin-left: 0
+    margin-bottom: 20px
+    margin-top: 13px
+    display: none
+    position: relative
+    p
+      font-size: 14px
+      font-weight: 500
+      margin: 0
+      display: inline-block
+      width: 100%
+      margin-bottom: 5px
+
+    ul
+      display: inline-block
+      width: 100%
+      p
+        display: inline-block
+        width: 60%
+        float: left
+        color: #79818e
+        font-size: 12px
+        font-weight: 400
+        margin: 0
+      span
+        display: inline-block
+        width: 40%
+        float: left
+        color: #79818e
+        font-size: 10px
+        &.product_none
+          color: #ef3124  
+
+        &.product_in  
+          width: 16px
+          height: 16px
+          background-color: #0dbf69
+          border-radius: 50%
+          
+          
+          span
+            color: #fff
+            font-size: 8px
+            text-align: center
+            line-height: 18px
+            width: 100%
+            display: inline-block
+
+        &.product_in_col  
+          span
+            padding: 0px 5px 
+            background-color: #31a9df
+            font-size: 12px
+            color: #fff
+            position: relative
+            top: -4px
+            width: auto  
+    
+
+.product_card_big_left_part
+
+  .product_card_big_slider_item
+    width: 29%
+    margin: 0 2%
+    float: left
+    img
+      width: 100%
+      height: 50px
+      object-fit: contain
+      border: 1px solid #efefef
+      cursor: pointer
+      &.galactive
+        border: 1px solid #bf0d3e
+
+  .main_img_slider  
+    margin-bottom: 30px
+    img  
+      width: 100%
+      height: 270px
+      object-fit: contain
+      margin-top: 6px
+
+.main_newproduct
+  position: relative
+
+  .tabs_main
+    
+    margin-top: -37px;
+    margin-bottom: 19px;
+    text-align: right;
+    li 
+      list-style: none
+      display: inline
+      margin-right: 24px
+
+      a 
+        color: rgba(255, 255, 255, 0.44)
+        font-size: 30px
+        color: #ca355e
+        &:hover,&.active
+          color: #fff
+
+
+.header_serch
+  width: calc(100% - 40px)
+  height: 50px
+  background-color: #fff
+  display: block
+  padding: 0 25px
+  box-shadow: 0px 0px 9px -1px rgba(0, 0, 0, 0.15)
+  border-radius: 25px
+  margin-top: 32px
+  margin-bottom: -33px
+  position: relative
+
+
+  input[type="text"]
+    display: inline-block
+    width: 72%
+    float: left
+    border: none 
+    height: 47px
+    padding-left: 10px
+    font-size: 14px
+  button
+    border: none
+    background-color: #fff
+    outline: none
+    height: 47px
+    font-size: 22px
+    color: #d5d8e0
+    padding: 0 11px
+    float: right
+    line-height: 53px
+    cursor: pointer
+​
+
+
+
+
+.header_search_preview
+
+  position: absolute
+  width: calc(100% - 60px)
+  padding: 30px
+  z-index: 100
+  background-color: #fff
+  margin-left: -25px
+  box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.13)
+  border-radius: 22px
+  margin-top: 20px
+  display: none
+  .header_search_preview_product
+    display: inline-block
+    width: 100%
+    margin-bottom: 15px
+    img
+      width: 100px
+      height: 70px
+      display: inline-block
+      float: left
+      object-fit: contain
+    .header_search_preview_product_text
+      width: calc(100% - 120px)
+      display: inline-block
+      float: right
+      p
+        font-size: 14px
+        color: #a5aab5
+        margin: 0
+        margin-top: 10px
+      span 
+        font-size: 18px
+        font-weight: 500
+        color: #bf0d3e
+        display: block 
+
+  .header_search_preview_allrezult      
+    font-size: 12px
+    text-decoration: underline
+
+
+
+
+
+
+
+.range-slider
+
+  width: auto
+  display: inline-block
+  margin-top: 12px
+
+  label
+    font-size: 14px
+    color: #a5aab5
+  
+
+  .range-slider__range
+    -webkit-appearance: none
+    width: 70px
+    height: 2px
+    border-radius: 5px
+    background: #d7dcdf
+    outline: none
+    padding: 0
+    margin: 0
+    position: relative
+    top: -2px
+    margin-left: 4px
+
+    &::-webkit-slider-thumb
+      -webkit-appearance: none
+      appearance: none
+      width: 13px
+      height: 13px
+      border-radius: 50%
+      background: #fff
+      border: 2px solid #d4d8e0
+      cursor: pointer
+      -webkit-transition: background .15s ease-in-out
+      transition: background .15s ease-in-out
+      &:hover
+        background: #d4d8e0
+       
+    &:active::-webkit-slider-thumb
+      background: #d4d8e0
+      
+    &::-moz-range-thumb
+        
+      width: 13px
+      height: 13px
+      border-radius: 50%
+      background: #fff
+      border: 2px solid #d4d8e0
+      cursor: pointer
+      
+      transition: background .15s ease-in-out
+      &:hover
+        background: #d4d8e0
+       
+    &:active::-moz-range-thumb
+      background: #d4d8e0
+      
+
+  .range-slider__value
+    display: inline-block
+    position: relative
+    width: auto
+    color: #a5aab5
+    line-height: 20px
+    text-align: left
+    margin-left: 6px
+    font-size: 14px
+    &:after
+      content: "a"
+      font-family: ALS Rubl
+      font-size: 14px
+      margin-left: 1px
+
+
+  \::-moz-range-track
+    background: #d7dcdf
+    border: 0
+
+  input
+    &::-moz-focus-inner, &::-moz-focus-outer
+      border: 0
+
+
+
+
+
+.jq-selectbox__select 
+  padding: 0 35px 0 10px
+  border-radius: 0px
+  background: #fff
+  box-shadow: none
+  
+  text-shadow: none
+  border: none
+  height: 50px
+  line-height: 49px
+  font-size: 14px
+  color: #a5aab5
+  float: left
+  box-shadow: none!important
+  &:hover,&:active,&:focus
+    background: #fff
+    border: none
+    outline: none
+
+.jq-selectbox__trigger 
+   
+  border-left: none
+
+.jq-selectbox__trigger-arrow
+  position: absolute
+  top: 18px
+  right: 18px
+  width: 9px
+  height: 14px
+  border: none
+  background-image: url(../img/select.svg)
+  
+.jq-selectbox__dropdown 
+  box-sizing: border-box
+  width: 100%
+  margin: 2px 0 0
+  padding: 0
+  border: 1px solid #CCC
+  border-radius: 0px
+  background: #FFF
+  box-shadow: none
+  font-size: 14px
+  top: 50px
+
+
+
+
+.header_fixed_main_wr
+  padding-top: 200px
+
+
+.basket_click_wr
+  background-color: #fff
+  padding: 20px
+  position: absolute
+  padding-top: 70px
+  z-index: 10
+  width: 300px
+  margin-left: -155px
+  margin-top: -43px
+  border-radius: 20px
+  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.15)
+  display: none
+  z-index: 100
+  &:before
+    content: "Корзина"
+    font-size: 18px
+    top: 19px
+    color: #bdc1cb
+    position: absolute
+    text-transform: uppercase
+    letter-spacing: 2px
+
+
+
+.basket_click_wr_product_item
+  display: inline-block
+  margin-top: 20px
+  &:first-child
+    margin-top: 0
+  img
+    width: 80px
+    height: 50px
+    object-fit: contain
+    margin-right: 5px
+    float:  left
+    display: inline-block
+  p
+    font-size: 14px
+    float: left 
+    display: inline-block
+    width: calc(100% - 85px)
+    margin: 0
+    height: 40px
+    text-overflow: ellipsis
+    white-space: normal
+    overflow: hidden
+    color: #000
+  span
+    display: block
+    color: #bf0d3e
+    font-size: 16px
+    font-weight: 500
+    width: calc(100% - 85px)
+    float: right
+    span
+      display: inline
+      width: auto
+      float: none
+
+
+.basket_click_wr_product
+  max-height: 257px
+  overflow-y: scroll
+  padding-right: 10px
+  &::-webkit-scrollbar
+    width: 5px
+    margin-right: 10px
+    cursor: pointer
+
+
+.basket_click_wr_total
+  display: block
+  margin: 10px 0
+  p
+    font-size: 24px
+    font-weight: 500
+    margin: 0
+    span
+      color: #757f8e
+      font-size: 14px
+      margin-right: 10px
+  a    
+    width: 100%
+   
+    color: white
+    font-family: "Gotham Pro"
+    font-size: 16px
+    font-weight: 500
+    text-align: center
+  
+    display: inline-block
+    line-height: 40px
+    margin-top: 20px
+    height: 40px
+    background-color: #0dbf69
+    border-radius: 20px
+    &:hover
+      background-color: #1ed47c
+    span 
+      margin-right: 5px 
+
+.personal_area_click
+
+  background-color: #fff
+  padding: 20px
+  position: absolute
+  padding-top: 45px
+  z-index: 301
+  width: 200px
+  margin-left: -45px
+  margin-top: -43px
+  border-radius: 20px
+  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.15)
+  padding-bottom: 0
+  display: none
+
+  &:before
+    content: ""
+    position: absolute
+    width: 100%
+    height: 1px
+    background-color: #f3f4f7
+    display: block
+    z-index: 130
+    left: 0
+    top: 44px
+
+  .personal_area_room
+    display: block
+    margin-bottom: 15px
+    font-size: 14px
+    span
+      font-size: 14px
+      margin-left: 10px
+    img
+      width: 26px
+      height: 26px
+      border-radius: 50%
+      margin-right: 6px
+      position: relative
+      top: 7px
+
+  ul
+    a
+      color: #757f8e
+      font-size: 12px
+      width: 100%
+      margin-bottom: 15px
+      display: inline-block
+      p
+        text-decoration: underline
+        margin: 0
+        display: inline
+        margin-left: 10px
+        width: calc(100% - 38px)
+        float: right
+        font-size: 12px
+        line-height: 19px
+
+      span
+        font-size: 17px
+        position: relative
+        top: 1px 
+        &.icon-90
+          font-size: 13px
+          position: relative
+          top: 3px
+        &.icon-85
+          font-size: 15px
+          position: relative
+          top: 3px  
+
+
+
+
+.cd-img-replace
+  replace text with a background-image
+  display: inline-block
+  overflow: hidden
+  text-indent: 100%
+  white-space: nowrap
+
+.overflow-hidden
+  overflow: hidden
+
+
+
+.cd-main-content
+ 
+  min-height: 100%
+  position: relative
+  background-color: #f5f4e9
+  z-index: 2
+  padding-top: 50px
+ 
+  -webkit-transform: translateZ(0)
+  -webkit-backface-visibility: hidden
+  -webkit-transition-property: -webkit-transform
+  -moz-transition-property: -moz-transform
+  transition-property: transform
+ 
+  &.lateral-menu-is-open
+   
+    -webkit-transform: translateX(-260px)
+    -moz-transform: translateX(-260px)
+    -ms-transform: translateX(-260px)
+    -o-transform: translateX(-260px)
+    transform: translateX(-260px)
+
+@media only screen and (min-width: 768px)
+  .cd-main-content
+    padding-top: 70px
+
+@media only screen and (min-width: 768px)
+  #cd-logo
+    margin: 22px 0 0 30px
+
+#cd-top-nav
+  position: absolute
+  top: 0
+  right: 120px
+  height: 100%
+  display: none
+  ul
+    height: 100%
+    padding-top: 18px
+  li
+    display: inline-block
+    margin-right: 1em
+  a
+    display: inline-block
+    padding: .5em
+    color: #FFF
+    text-transform: uppercase
+    font-weight: 600
+    &.current
+      background-color: #242e30
+
+.no-touch #cd-top-nav a:hover
+  color: rgba(255, 255, 255, 0.7)
+
+@media only screen and (min-width: 768px)
+  #cd-top-nav
+    display: block
+
+#cd-menu-trigger
+  position: relative
+  right: 0
+  top: 0
+  height: 50px
+  width: 50px
+  background-color: #64807d
+  position: relative
+  height: 50px
+  width: 50px
+  background-color: #64807d
+  display: none
+  .cd-menu-icon
+   
+    display: inline-block
+    position: absolute
+    left: 50%
+    top: 50%
+    bottom: auto
+    right: auto
+    -webkit-transform: translateX(-50%) translateY(-50%)
+    -moz-transform: translateX(-50%) translateY(-50%)
+    -ms-transform: translateX(-50%) translateY(-50%)
+    -o-transform: translateX(-50%) translateY(-50%)
+    transform: translateX(-50%) translateY(-50%)
+    width: 18px
+    height: 2px
+    background-color: #FFF
+    
+    &::before, &:after
+      content: ''
+      width: 100%
+      height: 100%
+      position: absolute
+      background-color: inherit
+      left: 0
+    &::before
+      bottom: 5px
+    &::after
+      top: 5px
+  &.is-clicked .cd-menu-icon
+    background-color: rgba(255, 255, 255, 0)
+    &::before, &::after
+      background-color: white
+    &::before
+      bottom: 0
+      -webkit-transform: rotate(45deg)
+      -moz-transform: rotate(45deg)
+      -ms-transform: rotate(45deg)
+      -o-transform: rotate(45deg)
+      transform: rotate(45deg)
+    &::after
+      top: 0
+      -webkit-transform: rotate(-45deg)
+      -moz-transform: rotate(-45deg)
+      -ms-transform: rotate(-45deg)
+      -o-transform: rotate(-45deg)
+      transform: rotate(-45deg)
+
+@media only screen and (min-width: 768px)
+  #cd-menu-trigger
+    .cd-menu-text
+      display: inline-block
+      line-height: 70px
+    .cd-menu-icon
+      left: auto
+      right: 1.25em
+      -webkit-transform: translateX(0)
+      -moz-transform: translateX(0)
+      -ms-transform: translateX(0)
+      -o-transform: translateX(0)
+      transform: translateX(0)
+
+#cd-lateral-nav
+  position: fixed
+  height: 100%
+  right: 0
+  top: 0
+  visibility: hidden
+ 
+  z-index: 1200
+  width: 320px
+  background-color: #f3f4f7
+  overflow-y: auto
+  
+  -webkit-transform: translateZ(0)
+  -webkit-backface-visibility: hidden
+ 
+  
+  -webkit-transform: translateX(80px)
+  -moz-transform: translateX(80px)
+  -ms-transform: translateX(80px)
+  -o-transform: translateX(80px)
+  transform: translateX(80px)
+  .cd-navigation
+    margin: 10px 0 16px
+  .sub-menu
+    padding: 0
+    display: none
+  a.current
+    background-color: #3a4a4d
+    color: #FFF
+  &.lateral-menu-is-open
+    -webkit-transform: translateX(0)
+    -moz-transform: translateX(0)
+    -ms-transform: translateX(0)
+    -o-transform: translateX(0)
+    transform: translateX(0)
+    visibility: visible
+   
+    
+    -webkit-overflow-scrolling: touch
+    box-shadow: -4px -4px 38px rgba(0, 0, 0, 0.2)
+
+  .item-has-children > a
+    position: relative
+    text-transform: uppercase
+    font-weight: 600
+    
+    &::after
+      content: ''
+      display: block
+      height: 11px
+      width: 8px
+      position: absolute
+      top: 50%
+      bottom: auto
+      -webkit-transform: translateY(-50%)
+      -moz-transform: translateY(-50%)
+      -ms-transform: translateY(-50%)
+      -o-transform: translateY(-50%)
+      transform: translateY(-50%)
+      right: 1em
+      background: url("../img/next.svg") no-repeat center center
+      background-size: 18px 12px
+      -webkit-transition-property: -webkit-transform
+      -moz-transition-property: -moz-transform
+      transition-property: transform
+      -webkit-transition-duration: 0.2s
+      -moz-transition-duration: 0.2s
+      transition-duration: 0.2s
+    &.submenu-open::after
+      -webkit-transform: translateY(-50%) rotate(90deg)
+      -moz-transform: translateY(-50%) rotate(90deg)
+      -ms-transform: translateY(-50%) rotate(90deg)
+      -o-transform: translateY(-50%) rotate(90deg)
+      transform: translateY(-50%) rotate(90deg)
+ 
+    
+
+@media only screen and (min-width: 768px)
+  #cd-lateral-nav .cd-navigation
+    margin: 20px 0
+
+
+
+.no-touch #cd-lateral-nav .socials a:hover
+  background-color: #4e6361
+  &.cd-twitter
+    background-position: 0 -32px
+  &.cd-github
+    background-position: -32px -32px
+  &.cd-facebook
+    background-position: -64px -32px
+  &.cd-google
+    background-position: -96px -32px
+
+#cd-lateral-nav
+  .header_control_block .personal_area
+    background-color: #fff
+    font-size: 12px
+    color: #a5aab5
+    padding: 7px 23px
+    border-radius: 10px
+    display: table
+    margin: 0
+    z-index: 13
+    cursor: pointer
+    display: inline-block
+    float: left
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.11)
+  a.cd-lateral-nav_close
+    display: inline-block
+    color: #c6cad2
+    float: right
+    cursor: pointer
+    margin-top: 5px
+  .header_control_block
+    display: inline-block
+    padding: 20px
+    width: calc(100% - 40px)
+
+.main_menu_mob_wr
+  background-color: #bf0d3e
+  display: inline-block
+  width: 100%
+
+#cd-lateral-nav
+  .main_menu_mob_wr
+    a
+      display: block
+      line-height: 2em
+      padding: 0 15px 0 21px
+      color: #ffffff
+      font-size: 14px
+      font-weight: 500
+      text-transform: capitalize
+      margin-bottom: 10px
+      > p
+        margin: 0
+    li ul li a
+      > p
+        margin: 0
+        font-size: 12px
+      font-weight: 400
+      font-size: 12px
+    a > p > span
+      display: block
+      font-size: 12px
+      color: #f15e81
+      font-weight: 400
+      margin-top: -10px
+    li ul li a > p > span
+      display: inline-block
+      font-size: 12px
+      color: #fff
+      margin-top: 0
+  .mob_sub_navigation
+    display: block
+    margin-top: 20px
+    a
+      display: block
+      line-height: 2em
+      padding: 0 15px 0 21px
+      font-size: 13px
+      font-weight: bold
+      color: #9da5b4
+      text-transform: uppercase
+      text-decoration: underline
+  .sub-menu
+    margin-bottom: 20px
+  .header_about_shop
+    padding-left: 20px
+    margin-top: 30px
+    .header_shop_name
+      color: #212730
+      font-size: 13px
+      font-weight: 500
+      margin: 0
+  .descrip_site_wr
+    display: block
+    margin: 20px 0
+    padding: 0 20px
+    p
+      margin: 0
+      color: #a5aab5
+
+.header_phone_block
+  a div
+    display: inline
+    margin-left: 5px
+  .mobile_smart_search_open
+    display: none
+    background-color: #0dbf69
+
+.footer_but_communication >
+  span
+    display: none
+  p
+    margin: 0
+
+
+
+
+.breadcrumbs_wr
+  display: inline-block
+  width: 100%
+  margin-bottom: 15px
+  li
+    color: #bababa
+    font-size: 12px
+    float: left
+    margin-right: 5px
+    &.active
+      a
+        color: #bf0d3e 
+    a
+      color: #bababa
+ 
+
+.page_name
+  font-size: 30px
+  color: #212730
+  margin: 0px 0 20px
+  .articul
+    font-size: 12px
+    color: #bfc3c8
+    display: block
+    width: 100%
+    font-weight: 400
+    margin-bottom: -5px
+    margin-left: 2px
+  &.red
+    color: #bf0d3e  
+
+.sitebar_nav_accordion
+  margin-top: 60px
+  margin-bottom: 30px
+  padding-left: 30px
+  .showMenu
+    display: block
+  .submenu
+    display: none
+  .lines
+    font-size: 30px
+    margin: -9px 0 0 0
+    float: right
+    opacity: .25
+    font-weight: 900
+  ul
+    margin-top: 10px
+    margin-bottom: 20px
+  .arrow
+    color: #666
+    margin: 0 5px 0 0
+    font-size: 14px
+
+.sitebar_nav li.mega_menu
+  display: block
+  width: 100%
+  position: relative
+
+.sitebar_nav_accordion
+  ul li
+    a
+    
+
+      width: calc(100% - 70px)
+      padding: 10px 35px
+      background-color: transparent
+      color: #fff
+      font-weight: 400
+      display: block
+      span
+        color: #4e5560
+        font-size: 11px
+        margin-top: 2px
+        display: block
+      &:hover
+        background-color: #bf0d3e
+        span
+          color: #fff
+      p
+        margin: 0
+        color: #fff
+        position: relative
+        font-size: 16px
+        font-weight: 400
+        i
+          font-size: 20px
+          text-align: right
+          float: right
+          span
+            font-size: 33px
+    ul li a
+      p
+        text-transform: capitalize
+        background: #212730
+        padding: 0
+        border: none
+        width: calc(100% - 46px)
+        padding-left: 35px
+        color: #bdc1cb
+        font-size: 12px
+        font-weight: 400
+        text-transform: capitalize
+        padding: 0
+        border: none
+        width: calc(100% )
+        padding-left: 0
+        color: #bdc1cb
+        font-size: 12px
+        font-weight: 400
+        display: inline-block
+        float: left
+      span
+        color: #b3bcc6
+        font-size: 11px
+        margin-top: -2px
+        display: inline-block
+  .submenu li a
+    text-transform: capitalize
+    background: #212730
+    padding: 0
+    border: none
+    width: calc(100% - 46px)
+    padding-left: 35px
+    color: #bdc1cb
+    font-size: 12px
+    font-weight: 400
+    margin-bottom: 0px
+    display: inline-block
+    &:hover
+      background: #212730
+      color: #fff
+      > p
+        color: #fff
+  ul li a.active
+    background-color: #bf0d3e
+    span
+      color: #fff
+    p span
+      margin: 0
+      color: #fff  
+
+
+.product_card_tabs
+  display: block
+  .tabs_main 
+    width: 100%
+    display: inline-block
+    margin-bottom: 25px
+    li
+      width: 100%
+      display: inline-block
+      float: left
+      width: auto
+      margin-right: 40px
+      a
+        font-size: 16px
+        font-weight: 400
+        text-decoration: none
+        color: #bababa
+
+        &.active
+          border-bottom: 3px solid #bf0d3e;
+          color:  #bf0d3e
+          font-weight: 500
+        &:hover
+          color: #111
+
+
+
+.product_card_product_slider_thumb
+  display: block 
+  width: 100%
+  margin-bottom: 0px
+  margin-top: 50px
+  img
+    width: 98%!important
+    height: 100px
+    object-fit: contain
+    border: 1px solid #efefef
+    cursor: pointer
+    &.galactive
+      border: 1px solid #bf0d3e
+
+  .owl-nav 
+    display: block
+    width: 59px
+    margin: 0 auto
+    margin-top: 25px
+    position: relative
+    right: -7px
+    top: -188px
+  
+    .owl-prev 
+      display: inline-block
+
+      .sl_nav 
+        display: inline-block
+        font-size: 30px
+        color: #eaeaea
+        border-top: 10px solid transparent
+        border-right: 17px solid #e8eaf2
+        border-bottom: 10px solid transparent
+        margin-right: 13px
+        &:hover 
+          border-right: 17px solid #bcc5d1
+    .owl-next 
+      display: inline-block
+      .sl_nav 
+        display: inline-block
+        font-size: 30px
+        color: #eaeaea
+        margin-left: 10px
+        border-top: 10px solid transparent
+        border-left: 17px solid #e8eaf2
+        border-bottom: 10px solid transparent
+        margin-top: 10px
+        margin-left: 1px  
+        &:hover 
+          border-left: 17px solid #bcc5d1    
+  
+
+.product_card_product_slider_main_img
+  margin-bottom: 30px
+  img  
+    width: 100%
+    height: 424px
+    object-fit: contain
+    margin-top: 6px
+
+
+.prod_card_prod_inform_prise
+  display: inline-block
+  width: calc(100% - 40px)
+  border: 1px solid #f3f4f7
+  padding: 30px 20px
+  .product_card_button
+    display: inline-block
+    width: 100%
+    margin-top: 5px
+    ul
+      width: 50%
+      float: left
+    .product_card_buttont_basket
+      background-color: #0dbf69
+      width: auto
+      border-radius: 25px
+      position: relative
+     
+      padding: 0 37px
+     
+       
+      span
+        margin-right: 5px
+  .buy_one_click
+    font-size: 16px
+    font-weight: 500
+    color: #31a9df
+    text-decoration: underline
+    display: inline-block
+    width: 100%
+    margin-top: 20px  
+
+  .product_card_credit
+    display: inline-block
+    float: left
+    font-size: 13px
+    font-weight: 400
+    margin-top: -1px
+    width: 30%
+    float: right
+    a
+      width: 40px
+      height: 40px
+      background-color: #ef3124
+      display: inline-block
+      margin-right: 5px
+      margin-left: 24px
+      color: #fff
+      text-align: center
+      line-height: 40px
+      border-radius: 50%
+      float: right
+
+.prod_card_prod_inform_availability
+  display: inline-block
+  width: calc(100% - 40px)
+  border: 1px solid #f3f4f7
+  padding: 20px 20px
+  border-top: none
+  margin-top: -6px
+  .in_availability
+    font-size: 14px
+    color: #757f8e
+    margin: 0
+    span
+      color: #0dbfb9
+      position: relative
+      top: 1px
+  .product_card_block_availability
+    display: block    
+    background-color: #fff
+    padding: 0
+    margin: 0
+    margin-top: 10px
+
+.prod_card_prod_inform_rating    
+  display: inline-block
+  width: calc(100% - 40px)
+  border: 1px solid #f3f4f7
+  padding: 20px 20px
+  border-top: none
+  margin-top: -6px
+  p
+    margin: 0
+    display: inline-block
+    margin-right: 10px
+    float: left
+    img
+      width: 96px
+    a
+      color: #757f8e
+      font-size: 12px
+      text-decoration: underline
+      margin-left: 10px
+      position: relative
+      top: -3px
+  >span
+    font-size: 14px
+    color: #757f8e
+    margin-top: 15px
+    display: inline-block
+    width: 100%
+  >a 
+    display: inline-block
+    float: left 
+    font-size: 12px
+    
+    color: #757f8e
+    margin-left: 10px
+    i
+      font-style: normal
+      text-decoration: underline
+    span
+      margin-right: 3px
+      color: #fed638
+  .prod_card_prod_inform_rating_review
+    img 
+      width: 133px
+      margin-top: 5px
+    .produst_social
+      display: inline-block
+      margin-left: 42px
+      margin-top: 0
+      position: relative
+      top: 6px
+      li
+        display: inline-block
+        float: left
+        margin-right: 5px
+        a 
+          span 
+            font-size: 30px
+        
+
+
+.product_reviews_slider
+  display: block
+  width: 100%
+  .product_reviews_slider_wr
+    display: inline-block
+    padding: 20px
+    background-color: #f3f4f7
+    span
+      font-size: 14px
+      color: #757f8e
+      font-weight: 500
+      img
+        width: 96px;
+        display: inline-block
+        margin-top: 0
+        position: relative
+        top: 3px
+        margin-left: 10px
+    p
+      font-size: 12px
+      color: #757f8e
+      font-weight: 400  
+      margin-bottom: 0
+    a
+      font-size: 33px
+      color: rgb(181, 181, 181)
+      font-weight: 500
+      line-height: 11px
+          
+
+  .owl-nav 
+    display: inline-block
+    position: absolute
+    top: -54px
+    right: 0
+    width: 59px
+   
+    .owl-prev 
+      display: inline-block
+
+      .sl_nav 
+        display: inline-block
+        font-size: 30px
+        color: #eaeaea
+        border-top: 10px solid transparent
+        border-right: 17px solid #e8eaf2
+        border-bottom: 10px solid transparent
+        margin-right: 13px
+        &:hover 
+          border-right: 17px solid #bcc5d1
+    .owl-next 
+      display: inline-block
+      .sl_nav 
+        display: inline-block
+        font-size: 30px
+        color: #eaeaea
+        margin-left: 10px
+        border-top: 10px solid transparent
+        border-left: 17px solid #e8eaf2
+        border-bottom: 10px solid transparent
+        margin-top: 10px
+        margin-left: 1px  
+        &:hover 
+          border-left: 17px solid 0#bcc5d1
+
+
+.product_reviews
+  >h3
+    font-size: 16px
+    display: inline-block
+    margin-right: 10px
+    color: #212730
+  >a 
+    font-size: 12px
+    text-decoration: underline
+    position: relative
+    top: -2px
+
+.product_about
+  display: block
+  width: 100%
+  margin-bottom: 150px
+  p 
+    color: #757f8e
+    font-size: 14px
+    margin-top: 10px
+    margin-bottom: 0
+    line-height: 22px
+
+    a
+      text-decoration: underline
+  h4
+    margin-bottom: 10px
+    color: #212730
+  h3
+    color: #212730
+    margin-bottom: 10px
+    margin-top: 20px
+  ul
+    padding-left: 20px;
+    li 
+      color: #757f8e
+      font-size: 14px
+      margin-top: 4px
+      margin-bottom: 0 
+      list-style: disc
+
+
+.sitebar_filter
+  top: 0px
+  position: absolute
+  background-color: #212730
+  bottom: 0
+  left: 0
+  right: 0
+  z-index: 10
+  display: none
+  .sitebar_filter_name
+    background-color: #2e3540
+    display: inline-block
+    width: 100%
+    background-image: url("../img/filt.png")
+    background-position: 61px 32px
+    background-repeat: no-repeat
+    position: relative
+    margin-bottom: 40px
+    h3
+      color: #0dbf69
+      font-size: 16px
+      text-align: center
+      margin-top: 70px
+      margin-bottom: 20px
+      text-transform: uppercase
+      font-weight: 700
+      letter-spacing: 2px
+    .sitebar_filter_close
+      font-size: 16px
+      color: #414955
+      position: absolute
+      right: 17px
+      top: 17px
+      cursor: pointer
+
+  form
+    display: inline-block
+    width: calc(100% - 163px)
+    padding: 0 90px 3px 50px
+    margin-right: 100px
+    height: calc(100vh - 172px)
+    overflow-y: auto
+    p
+      margin: 0
+      font-size: 14px
+      color: #4e5560
+      margin-bottom: 10px
+    label
+      font-size: 14px
+      color:#fff
+      display: block
+      width: 100%
+      margin-top: 8px 
+
+    .all_check 
+      color: #bdc1cb
+      text-decoration: underline
+      font-size: 12px
+      display: block
+      margin-top: 15px
+
+    .sitebar_filter_check_wr
+      margin-bottom: 30px
+      display: inline-block 
+      width: 100%
+
+    .sitebar_filter_select_wr
+      margin-bottom: 35px
+      display: inline-block 
+      width: 100%
+      .jq-selectbox__select
+        padding: 0 35px 0 10px
+        border-radius: 0px
+        background: #fff
+        box-shadow: none
+        text-shadow: none
+        border: none
+        height: 32px
+        line-height: 33px
+        font-size: 14px
+        color: #a5aab5
+        float: left
+        width: calc(100% - 45px)
+        box-shadow: none!important
+
+      .jq-selectbox__trigger-arrow 
+        position: absolute
+        top: 10px
+        right: 11px
+      .jq-selectbox__dropdown 
+        box-sizing: border-box
+        width: 100%;
+        margin: 2px 0 0
+        padding: 0
+        border: 1px solid #CCC
+        border-radius: 0px
+        background: #FFF
+        box-shadow: none
+        font-size: 13px
+        top: 30px
+    
+      select
+        width: 100%
+        box-shadow: none!important
+      .jq-selectbox 
+        vertical-align: middle
+        cursor: pointer
+        width: 100%
+        box-shadow: none!important
+
+    .sitebar_filter_radio_wr 
+      margin-bottom: 30px
+      display: inline-block 
+      width: 100%
+
+    .sitebar_filter_price_wr
+      margin-bottom: 20px
+      display: inline-block 
+      width: 100%
+      #slider-range-value1
+        display: inline-block
+        width: 130px
+        text-align: center
+        background-color: #fff
+    
+        float: left 
+        margin-top: 10px
+        height: 30px
+        line-height: 30px
+        font-size: 14px
+        font-weight: 500
+        color: #757f8e
+        &:after 
+          content: "a"
+          font-family: ALS Rubl
+          font-size: 14px
+          margin-left: 1px
+      #slider-range-value2
+        display: inline-block
+        width: 130px
+        text-align: center
+        background-color: #fff
+        
+          
+        float: right  
+        margin-top: 10px
+        height: 30px
+        line-height: 30px
+        font-size: 14px
+        font-weight: 500
+        color: #757f8e
+        &:after 
+          content: "a"
+          font-family: ALS Rubl
+          font-size: 14px
+          margin-left: 2px
+    .button_red
+      float: right
+      margin-top: 15px
+
+    .button_grey
+      float: left  
+      margin-top: 15px   
+      
+        
+.button_red
+  display: inline-block
+  width: 135px
+  height: 30px
+  background-color: #bf0d3e
+  line-height: 30px
+  text-align: center
+  font-size: 12px
+  text-transform: uppercase
+  border: none
+  color: #fff
+  outline: none!important
+  border-radius: 20px
+  letter-spacing: 1px
+  cursor: pointer
+  &:hover
+    opacity: 0.8
+
+.button_grey
+  display: inline-block
+  width: 135px
+  height: 30px
+  background-color: #4e5560
+  line-height: 30px
+  text-align: center
+  font-size: 12px
+  text-transform: uppercase
+  border: none
+  color: #fff
+  outline: none !important
+  border-radius: 20px
+  letter-spacing: 1px
+  cursor: pointer
+  &:hover
+    opacity: 0.8
+
+
+.sitebar_filter_open
+  height: calc(100% - 204px)
+  display: inline-block
+  width: 30px
+  position: absolute
+  top: 204px
+  background-color: #2e3540
+  cursor: pointer
+  background-image: url(../img/setting.svg)
+  background-repeat: no-repeat
+  background-size: 65%
+  background-position: center
+
+.prod_characteristic
+  display: inline-block
+  width: 100%
+  border: 1px solid #f3f4f7
+  margin-bottom: 50px
+  position: relative
+  max-height: 423px
+  overflow-y: auto
+  
+  
+
+  .prod_characteristic_product_price    
+    display: inline-block
+    width: 180px
+    margin-left: 20px    
+
+
+.prod_characteristic_product
+  padding: 50px 30px 30px
+  display: inline-block
+  width: calc(100% - 60px)
+  box-shadow: 0px 6px 22px -8px rgba(0, 0, 0, 0.22)
+  position: relative
+  top: 0
+  background-color: #fff
+  border: 1px solid #f3f4f7
+  border-bottom: none
+  img
+    width: 100px
+    height: 100px
+    object-fit: contain
+    border: 1px solid #f3f4f7
+    display: inline-block
+    float: left
+    margin-right: 30px
+    margin-top: -25px
+  a.prod_characteristic_product_name 
+    width: 320px
+    display: inline-block
+    float: left
+    font-weight: 500
+    text-decoration: underline 
+
+  .product_card_price_actual
+    font-size: 24px
+    font-weight: 500
+    display: block
+  .product_card_price_sale 
+    font-size: 12px
+    font-weight: 400
+    display: block
+    color: #9ca4af
+    margin-bottom: -6px 
+    text-decoration: line-through
+    height: 18px
+    .product_card_price_sale_percent
+      display: inline-block
+      background-image: url(../img/form_sale.svg)
+      color: #fFF
+      font-size: 10px
+      padding: 2px 5px 0px 4px
+      margin-left: 6px
+      position: relative
+      top: -1px
+      background-repeat: no-repeat
+     
+      background-size: contain
+  .product_card_buttont_basket
+    background-image: url(../img/bask_bg.jpg)
+    background-size: cover
+    width: auto
+    border-radius: 25px
+    position: relative
+    color: #fff
+    display: inline-block
+    float: right
+    padding: 10px 27px
+    position: relative
+    top: -46px
+    &:hover
+      background-image: url(../img/bask_bg.jpg)
+      background-size: cover
+      width: auto
+      border-radius: 25px
+      position: relative
+     
+      padding: 10px 27px
+    span
+      margin-right: 5px  
+
+.prod_character_wr
+  display: inline-block
+  width: calc(100% - 60px)
+  padding: 15px 30px
+  
+  margin-bottom: -6px
+  &:nth-child(2n)
+    background-color: #f3f4f7
+  p
+    display: inline-block
+    width: 50%
+    color: #757f8e
+    font-size: 14px
+    float: left  
+    margin: 0
+  span
+    display: inline-block
+    width: 50%
+    color: #757f8e
+    font-size: 14px
+    float: left    
+  a 
+    text-decoration: underline
+    font-size: 14px   
+
+#characteristic
+  margin-bottom: 200px
+  display: block    
+
+
+
+.product_card.shot_form  
+  border: 1px solid #f3f4f7
+  .product_card_button 
+    display: inline
+    width: auto
+    float: left
+    position: relative
+    margin-left: 30px
+    
+  .product_card_img img
+    width: 100%
+    height: 150px
+    object-fit: contain
+  
+.product_reviews
+  .product_card.shot_form  
+    margin-bottom: 20px
+
+.prod_accessory
+  .product_card.shot_form  
+  
+    
+    .product_card_img img
+      width: 100%
+      height: 180px
+      object-fit: contain
+
+#accessory
+  margin-bottom: 200px      
+
+.product_reviews
+  display: inline-block
+  margin-top: -64px
+  width: 100%
+  h3
+    margin-bottom: 26px
+  .tovar_name
+    margin-bottom: 15px
+    font-size: 24px
+    margin-top: 50px
+
+.reviews_prod_item
+  display: inline-block
+  width: 100%
+  background-color: #f3f4f7
+  border: 1px solid #f3f4f7 
+  color: #757f8e 
+  margin-bottom: 30px  
+  .reviews_prod_about
+    display: inline-block
+    padding: 10px 20px
+    border-bottom: 1px solid #e7eaf0
+    width: calc(100% - 40px)
+    p
+      display: inline-block
+      color: #757f8e
+      font-size: 14px
+      font-weight: 500
+      
+      margin: 0
+      margin-right: 20px
+      img
+        width: 96px
+        margin-left: 10px
+        position: relative
+        top: 2px
+
+    span
+      font-size: 12px
+
+      span
+        color: #fff
+        background-color: #c2c5cf   
+        height: 25px
+        line-height: 25px
+        padding:  5px 10px
+        border-radius: 20px
+        margin-left: 10px
+
+  .reviews_prod_text
+    padding: 20px
+    display: inline-block
+    width: calc(100% - 40px)
+    .date 
+      display: block
+      font-size: 12px
+      color #bababa
+      margin-bottom: 10px
+    .plus
+      position: relative
+      padding-left: 20px
+      display: block
+      margin-bottom: 15px
+      span 
+        color: #0dbf69
+        position: absolute
+
+        left: 0px
+        top: 2px
+
+    .minus
+      position: relative
+      padding-left: 20px
+      display: block
+      margin-bottom: 15px
+      span 
+        color: #ef3124
+        position: absolute
+
+        left: 0px
+        top: 2px
+
+    .text
+      position: relative
+      padding-left: 20px
+      display: block
+      margin-bottom: 15px
+      span 
+        color: #bec2cc
+        position: absolute
+
+        left: 0px
+        top: 3px 
+
+  .reviews_useful
+    display: inline-block
+    width: calc(100% - 40px)
+    padding: 10px 20px
+    background-color: #fff
+    p
+      font-size: 14px
+      display: inline-block
+      margin: 0
+      margin-right: 10px
+    a 
+      display: inline-block
+      margin-right: 10px
+      font-size: 14px
+      
+      &.true
+        color: #0dbf69
+      &.false
+        color: #ef3124
+          
+      span
+        margin-left: 2px
+        color: #757f8e 
+
+
+
+
+
+
+
+.button_light_grey
+  display: inline-block
+  padding: 0 15px
+  height: 30px
+  background-color: #bdc1cb
+  line-height: 30px
+  text-align: center
+  font-size: 12px
+  text-transform: uppercase
+  border: none
+  color: #fff
+  outline: none !important
+  border-radius: 20px
+  letter-spacing: 1px
+  cursor: pointer
+  margin-top: 20px
+  &:hover
+    opacity: 0.8
+
+.reviews_prod_wr
+  margin-bottom: 50px
+
+.reviews_prod_form
+  display: inline-block
+  width: 100%
+  
+  border: 1px solid #f3f4f7 
+  color: #757f8e 
+  margin-bottom: 30px  
+  h3
+    display: inline-block
+    width: calc(100% - 40px)
+    background-color: #f3f4f7
+    padding: 10px 20px
+    margin: 0 
+    color: #111
+    font-size: 16px
+  form
+    display: inline-block
+    width: calc(100% - 40px) 
+    padding: 20px
+    .reviews_prod_form_rating_label
+      display: inline-block
+      float: left
+      margin: 0
+      margin-right: 15px
+     
+
+    .reviews_prod_form_rating
+      display: inline-block
+      float: left
+      span
+        font-size: 20px 
+        position: relative
+        top: -1px
+        cursor: pointer
+
+        &:hover .path2:before 
+          color: #fed947
+        .path2:before 
+           color: #e6e9ed
+
+    label   
+      display: inline-block
+      margin-top: 20px
+      width: 100% 
+      margin-bottom: 10px
+      span
+        font-size: 14px   
+    .reviews_prod_form_using
+      label
+        width: auto
+        float: left
+        margin-right: 20px   
+        font-size: 12px
+        cursor: pointer 
+        margin-top: 5px
+    .plus
+    
+      span 
+        color: #0dbf69
+        
+
+    .minus
+     
+      span 
+        color: #ef3124
+        
+    .text
+      
+      span 
+        color: #bec2cc
+
+    .button
+      margin-bottom: 30px
+      font-weight: 500
+
+        
+
+
+
+.reviews_prod_form_rating_wr
+  display: block
+
+textarea 
+    
+  width: calc(100% - 20px)
+  resize: none
+  height: 110px
+ 
+  border: 1px solid #f3f4f7
+  padding: 10px
+  outline: none!important
+  box-shadow: none
+  font-size: 14px
+  &:active,&:focus
+    border: 1px solid #ccc
+
+
+  
+input
+  width: calc(100% - 10px)
+  resize: none
+  height: 40px
+  line-height: 40px
+  border: 1px solid  #f3f4f7
+  padding-left: 10px  
+  outline: none!important
+  box-shadow: none
+  font-size: 14px
+  &:active,&:focus
+    border: 1px solid #ccc
+
+
+
+
+
+.button
+  display: inline-block
+  padding: 0 15px
+  height: 30px
+  background-color: #bf0d3e
+  line-height: 30px
+  text-align: center
+  font-size: 12px
+  text-transform: uppercase
+  border: none
+  color: #fff
+  outline: none !important
+  border-radius: 20px
+  letter-spacing: 1px
+  cursor: pointer
+  margin-top: 20px
+  &:hover
+    opacity: 0.8
+
+#reviews
+  margin-bottom: 50px    
+
+.page_deskript
+  font-size: 16px
+  color: #757f8e
+
+.katalog_wr
+  display: block
+  margin-bottom: 40px
+  &.last_kat
+    margin-bottom: 100px
+
+  >li
+    
+    a
+      font-size: 16px
+      font-weight: 500
+      color: #bf0d3e
+      &:hover
+        text-decoration: underline
+  >ul 
+    margin-left: 20px
+    margin-top: 10px
+    li
+      a
+        font-size: 12px
+        font-weight: 400
+        color: #000000
+      span
+        font-size: 12px
+        color: #79818e
+        margin-left: 4px
+        &.green 
+          color: #119549 
+
+      
+  >a
+    font-size: 14px
+    color: #bf0d3e
+    display: block
+
+
+
+.personal_room_sitebar
+  display: inline-block
+  width: 100%
+  border: 1px solid #eaf1ff
+  margin-bottom: 40px
+  ul
+    a
+      color: #757f8e
+      font-size: 12px
+      width: calc(100% - 40px)
+      margin-bottom: 0px
+      display: inline-block
+      border-bottom: 1px solid #eaf1ff
+      padding: 10px 20px
+
+      &:hover
+        background-color: #f3f4f7
+      &:last-child
+        border: none
+      &.lite_span
+        span
+          font-size: 16px
+          position: relative
+          top: 1px
+
+      p
+        text-decoration: underline
+        margin: 0
+        display: inline
+        margin-left: 10px
+        width: calc(100% - 38px)
+        float: right
+        margin-top: 1.5px
+        color: #757f8e
+
+      span
+        font-size: 19px
+        position: relative
+        top: 1px 
+        color: #c6cad0
+        &.icon-87
+          position: relative
+          left: -2px 
+        &.icon-90
+          position: relative
+          left: -1.5px
+          font-size: 15px 
+          top: 3px  
+
+
+
+.page_name_h3
+  margin-top: 0
+  margin-bottom: 10px
+  font-size: 18px
+
+.personal_room_form
+  margin-bottom: 150px
+  width: 60%
+  label
+    color: #757f8e
+    font-size: 14px
+    display: block
+    margin-bottom: 5px
+    margin-top: 20px
+  .avatar_personal  
+    width: 215px
+    height: 215px
+    margin-bottom: 20px
+    display: inline-block
+    object-fit: cover
+    border: 1px solid #eaf1ff
+  .button_light_grey
+    margin-top: 30px
+
+
+.you_saw_block
+  margin-bottom: 150px
+  width: 100%
+  display: block
+  .product_card.shot_form .product_card_img img 
+    width: 100%
+    height: 170px
+    object-fit: contain
+  .owl-nav 
+    display: inline-block
+    position: absolute
+    top: -54px
+    right: 0
+    width: 59px
+   
+    .owl-prev 
+      display: inline-block
+
+      .sl_nav 
+        display: inline-block
+        font-size: 30px
+        color: #eaeaea
+        border-top: 10px solid transparent
+        border-right: 17px solid #e8eaf2
+        border-bottom: 10px solid transparent
+        margin-right: 13px
+        &:hover 
+          border-right: 17px solid #bcc5d1
+    .owl-next 
+      display: inline-block
+      .sl_nav 
+        display: inline-block
+        font-size: 30px
+        color: #eaeaea
+        margin-left: 10px
+        border-top: 10px solid transparent
+        border-left: 17px solid #e8eaf2
+        border-bottom: 10px solid transparent
+        margin-top: 10px
+        margin-left: 1px  
+        &:hover 
+          border-left: 17px solid 0#bcc5d1
+  
+.product_card_price.utochnite .product_card_price_actual 
+
+  color: #31a9df
+
+.product_card.shot_form .product_card_price .product_card_price_actual 
+  font-size: 20px
+  font-weight: 500
+  display: block
+
+
+.product_card_button li a.product_card_buttont_utochnite 
+  width: auto
+  padding: 0 14px
+  background-color: #31a9df
+  font-size: 14px
+  color: #fff
+  display: inline-block
+  line-height: 35px
+  text-align: center
+  border-radius: 17px
+  cursor: pointer
+  height: 35px
+  position: relative
+  top: 7px
+
+
+.new_prof_form
+  margin-bottom: 150px
+  width: 60%
+  label
+    color: #757f8e
+    font-size: 14px
+    display: block
+    margin-bottom: 5px
+    margin-top: 20px
+  .avatar_personal  
+    width: 215px
+    height: 215px
+    object-fit: cover
+    border: 1px solid #eaf1ff
+  .button_light_grey
+    margin-top: 30px
+
+.requisites_table_wr
+  margin-bottom: 150px
+  a
+    text-decoration: underline
+  
+  .add_requisites
+    margin-bottom: 50px
+    display: block 
+  
+.cont_table 
+  border: 1px solid #f1f1f1
+  background: #fff
+  margin-bottom: 20px
+  border-spacing: 0!important
+  width: 100%
+  th 
+    padding: 15px 0px
+    text-align: left
+    color: #bababa
+    padding-left: 15px
+    line-height: 12px
+    font-weight: 400
+    font-size: 12px
+  tr td
+    border-top: 1px solid #e7e7e7
+    font-size: 14px
+    padding: 15px 5px
+    padding-left: 15px
+    color: #757f8e
+  .del_requisites 
+    color: #757f8e
+    text-decoration: none 
+    cursor: pointer 
+    &:hover
+      color: #bf0d3e
+ 
+.new_prod_butt
+  text-decoration: underline 
+
+
+.icon-78
+  color: #afb3bd
+
+
+.new_requisites_form
+  margin-bottom: 150px
+  width: 60%
+  label
+    color: #757f8e
+    font-size: 14px
+    display: block
+    margin-bottom: 5px
+    margin-top: 20px
+  .avatar_personal  
+    width: 215px
+    height: 215px
+    margin-bottom: 20px
+    display: inline-block
+    object-fit: cover
+    border: 1px solid #eaf1ff
+  .button_light_grey
+    margin-top: 30px
+  span
+    font-size: 12px 
+    color: #111
+    display: block  
+
+
+  .sitebar_filter_select_wr
+    margin-bottom: 20px
+    display: inline-block 
+    width: 100%
+    .jq-selectbox__select
+      padding: 0 35px 0 10px
+      border-radius: 0px
+      background: #fff
+      box-shadow: none
+      text-shadow: none
+      border: 1px solid #f3f4f7
+      height: 40px
+      line-height: 40px
+
+      font-size: 14px
+      color: #a5aab5
+      float: left
+      width: calc(100% - 45px)
+    .jq-selectbox__trigger-arrow 
+      position: absolute
+      top: 13px
+      right: 11px
+    .jq-selectbox__dropdown 
+      box-sizing: border-box
+      width: 100%;
+      margin: 2px 0 0
+      padding: 0
+      border: 1px solid #f3f4f7;
+      border-radius: 0px
+      background: #FFF
+      box-shadow: none
+      font-size: 13px
+      top: 40px
+
+    select
+      width: 100%
+    .jq-selectbox 
+      vertical-align: middle
+      cursor: pointer
+      width: 100%
+    
+
+
+select
+  border-radius: 0px
+  border-color: #f3f4f7!important
+
+
+
+.sitebar_filter_select_wr
+    margin-bottom: 20px
+    display: inline-block 
+    width: 100%
+    .jq-selectbox__select
+      padding: 0 35px 0 10px
+      border-radius: 0px
+      background: #fff
+      box-shadow: none
+      text-shadow: none
+      border: 1px solid #f3f4f7
+      height: 40px
+      line-height: 40px
+
+      font-size: 14px
+      color: #a5aab5
+      float: left
+      width: calc(100% - 45px)
+    .jq-selectbox__trigger-arrow 
+      position: absolute
+      top: 13px
+      right: 11px
+    .jq-selectbox__dropdown 
+      box-sizing: border-box
+      width: calc(100% + 2px)
+      margin: 2px 0 0
+      padding: 0
+      border: 1px solid #f3f4f7
+      border-radius: 0px
+      background: #FFF
+      box-shadow: none
+      font-size: 13px
+      top: 40px
+
+    select
+      width: 100%
+    .jq-selectbox 
+      vertical-align: middle
+      cursor: pointer
+      width: 100%
+
+
+.history_order_serch
+  p
+    margin: 0
+    display: inline-block
+    float: left
+    margin-right: 20px
+    font-size: 12px
+    a
+      color: #111
+      margin-left: 4px
+      margin-right: 4px
+
+  select
+    width: 100px!important
+    display: inline-block
+    float: left  
+
+  .jq-selectbox__select 
+    padding: 0 35px 0 10px
+    border-radius: 0px
+    background: #fff
+    box-shadow: none
+    text-shadow: none
+    border: 1px solid #ccc
+    height: 28px
+    line-height: 29px
+    font-size: 14px
+    color: #a5aab5
+    float: left
+    width: calc(100px + 24px) 
+    top: -8px
+  .jq-selectbox__dropdown 
+   
+    top: 30px  
+  .jq-selectbox__trigger-arrow 
+    position: absolute
+    top: 8px
+    right: 11px 
+  a.now_order 
+    margin: 0
+    display: inline-block
+    float: right
+    margin-right: 20px
+    font-size: 12px 
+    &.active
+      text-decoration: underline
+
+
+.history_order_cat_name
+  font-size: 18px
+  margin-bottom: 0
+  margin-top: 30px
+ 
+
+.history_order_zakaz
+  color: #757f8e
+  .history_order_zakaz_name
+    display: inline-block
+    width:  calc(100% - 40px)
+    background-color: #f3f4f7
+    padding: 10px 20px
+    font-weight: 500
+    font-size: 12px
+    a
+      float: right
+      text-decoration: underline
+  
+.history_order_about
+  display: inline-block
+  width:  calc(100% - 42px)
+  border: 1px solid #f3f4f7
+  padding: 20px
+  margin-top: -12px
+  position: relative
+  p
+    font-size: 14px
+    margin: 0
+  span
+    font-weight: 500
+    margin-right: 5px
+  .history_order_zakaz_sost_name
+    margin-top: 20px
+    margin-bottom: 5px
+    display: block
+    font-size: 14px
+  
+  ul
+    margin: 0 0 20px 0 
+    a
+    font-size: 14px
+    text-decoration: underline    
+  .status
+    position: absolute
+    background-color: #f3f4f7
+    right: 10px
+    top: 10px   
+    padding: 0 5px   
+    font-size: 12px
+    color: #757f8e 
+    font-weight: 400
+    &.red
+      background-color: #bf0d3e
+      color: #fff
+    &.green
+      background-color: #0dbf69
+      color: #fff  
+ 
+.history_order_wr
+  margin-bottom: 150px      
+
+.button_white
+  display: inline-block
+  padding: 0 15px
+  height: 30px
+  background-color: #fff
+  line-height: 32px
+  text-align: center
+  font-size: 12px
+  text-transform: uppercase
+  border: none
+  color: #757f8e
+  outline: none !important
+  border-radius: 20px
+  letter-spacing: 1px
+  cursor: pointer
+  margin-top: 20px
+  border: 2px solid #f3f4f7
+  margin-right: 10px
+  &:hover
+    opacity: 0.8      
+
+
+.cancellations
+  margin-bottom: 150px
+  font-size: 14px
+  width: 60%
+  label
+    color: #757f8e
+    font-size: 14px
+    display: block
+    margin-bottom: 5px
+    margin-top: 20px
+
+.feedback    
+  margin-bottom: 150px
+  font-size: 14px
+  width: 60%
+  label
+    color: #757f8e
+    font-size: 14px
+    display: block
+    margin-bottom: 5px
+    margin-top: 20px
+
+
+.necessarily
+  color: #bf0d3e
+
+
+
+.news_wrap
+  display: inline-block
+  width: calc(100% - 60px)
+  padding: 30px
+  border: 1px solid #f3f4f7
+  margin-bottom: 30px
+  -moz-transition: all 0.2s ease
+  -webkit-transition: all 0.2s ease
+  transition: all 0.2s ease
+ 
+  &:hover
+    box-shadow: 0 0 20px 0px rgba(6, 6, 6, 0.14)
+    border: 1px solid #fff
+
+  .news_img
+    position: relative
+    display: inline-block
+    float: left
+    margin-right: 30px
+    img
+      width: 278px
+      height: 180px
+      border: 1px solid #f3f4f7
+      object-fit: contain
+      display: inline-block
+      float: left
+      
+      position: relative
+    &.video_new:before
+      content: ""
+      background-color: rgba(17, 17, 17, 0.19)
+      position: absolute
+      
+      left: 0
+      top: 0
+      right: 0
+      bottom: 0
+      display: inline-block
+      background-image: url("../img/vid.png")
+      background-repeat: no-repeat
+      background-position: center
+      z-index: 2
+
+
+
+
+  .news_text
+    display: inline-block
+    width: calc(100% - 310px)
+    span
+      font-size: 12px
+      color: #bbbcc4
+      display: block
+      margin-bottom: 8px
+    a 
+      font-size: 24px
+      font-weight: 500
+      margin-bottom: 8px
+      display: block
+      &:hover
+        text-decoration: underline
+
+    p 
+      font-size: 14px
+      color: #757f8e
+      margin: 0
+      max-height: 112px
+      overflow-y: hidden
+
+
+
+
+.page_nav
+  display: table
+  margin: 10px auto 150px
+  li
+    display: inline-block
+    float: left
+    margin-right: 24px
+    a
+      font-size: 14px
+      color: #757f8e
+      line-height: 21px
+      display: block
+      &.prev
+        display: inline-block
+        font-size: 30px
+        color: #eaeaea
+        border-top: 10px solid transparent
+        border-right: 17px solid #e8eaf2
+        border-bottom: 10px solid transparent
+        margin-right: 10px
+        
+        &:hover
+          border-right: 17px solid #bcc5d1
+
+      &.next
+        display: inline-block
+        font-size: 30px
+        color: #eaeaea
+        margin-left: 10px
+        border-top: 10px solid transparent
+        border-left: 17px solid #e8eaf2
+        border-bottom: 10px solid transparent
+        margin-left: 10px
+      &.active
+        background-color: #bf0d3e
+        width: 37px
+        height: 37px
+        border-radius: 50%
+        text-align: center
+        line-height: 37px
+        color: #fff
+        position: relative
+        top: -9px
+
+.page_nav_wr
+  position: relative
+  p
+    font-size: 12px
+    position: absolute
+    right: 0
+    top: -6px
+    color: #79818e
+
+
+.wrap_404
+  display: inline-block
+  margin: 50px 0 150px
+  width: 100%
+  p
+    font-size: 20px
+    display: block
+    text-align: left
+    margin-bottom: 0
+    font-weight: 400
+    color: #030303
+    margin-left: 260px
+
+  >span
+    font-size: 300px 
+    text-align: center
+    display: block 
+    margin-bottom: 30px
+  a
+    
+   text-transform: uppercase
+   font-size: 14px
+   text-decoration: underline
+   margin-left: 260px
+
+
+
+.brand_item
+  display: inline-block
+  width: 100%
+  border: 1px solid #f3f4f7
+  height: 172px
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  -webkit-flex-direction: row
+  -ms-flex-direction: row
+  flex-direction: row
+  -webkit-flex-wrap: nowrap
+  -ms-flex-wrap: nowrap
+  flex-wrap: nowrap
+  -webkit-justify-content: center
+  -ms-flex-pack: center
+  justify-content: center
+  -webkit-align-content: center
+  -ms-flex-line-pack: center
+  align-content: center
+  -webkit-align-items: center
+  -ms-flex-align: center
+  align-items: center
+  img
+    width: 70%
+    display: table
+    margin: auto
+    max-height: 152px
+    object-fit: contain
+
+
+.brand_wrap
+  margin-bottom: 150px
+  .page_nav
+    margin-top: 40px
+
+.hidden_salon
+  display: none
+
+.contact_item_salon
+  display: inline-block
+  width: 100%
+  margin-bottom: 50px
+  -moz-transition: all 0.2s ease
+  -webkit-transition: all 0.2s ease
+  transition: all 0.2s ease
+  &:hover
+    box-shadow: 0 0 18px 0px rgba(0, 0, 0, 0.12);
+
+.contact_item_name
+  display: block
+  margin-bottom: 15px
+  position: relative
+  span
+    font-size: 24px
+    font-weight: 500
+    margin-right: 10px
+  .contact_item_name_descr
+    font-size: 14px
+    position: absolute
+    top: -15px
+    font-weight: 400
+    color: #bf0d3e
+  a.active 
+    font-size: 14px
+    text-decoration: underline
+    color: #bf0d3e
+  a 
+    display: inline
+    margin: 0
+    margin-left: 20px  
+    color: #111
+    text-decoration: none
+    font-size: 14px
+
+.contact_item_map
+  img
+    width: 100%
+    height: 170px
+    object-fit: cover    
+
+.hidden_salon
+  display: none
+
+
+.contact_item_content
+  display: inline-block
+  padding: 20px 30px
+  width: calc(100% - 62px)
+  border: 1px solid #edeff5
+  margin-top: -6px
+  border-top: none
+  position: relative
+
+  h3
+    margin-top: 0
+    font-size: 18px
+  >i
+    position: absolute
+    bottom: 30px
+    right: 30px
+
+  
+  .contact_item_content_block
+    display: inline-block
+    width: 100%
+    color: #757f8e
+    margin-bottom: 20px
+    position: relative
+    padding-left: 40px
+
+
+    span
+      font-size: 14px
+      display: block
+      font-weight: 500
+    
+    p
+      font-size: 14px
+      margin: 0
+    a 
+      font-size: 14px
+      display: block
+      text-decoration: underline 
+    i 
+      position: absolute
+      left: 0
+      top: 3px
+
+    
+.contact_item_internet   
+  display: inline-block
+  width: 100%
+  margin-bottom: 100px
+  -moz-transition: all 0.2s ease
+  -webkit-transition: all 0.2s ease
+  transition: all 0.2s ease
+  border: 1px solid #edeff5
+  &:hover
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.12)
+
+  .contact_item_content
+    border: none  
+    width: calc(100% - 60px)
+
+.contact_item_internet_name
+  display: inline-block
+  position: relative
+  padding: 20px 30px
+  width: calc(100% - 60px)
+
+  h3
+    margin: 0
+    margin-bottom: 10px
+  span 
+    color: #bf0d3e
+    font-size: 14px
+    position: relative
+    top: -10px
+  p 
+    display: inline-block
+    margin: 0
+    position: absolute
+    font-size: 18px
+    right: 30px
+    top: 20px
+    span
+      font-weight: 500
+      font-size: 48px 
+      color: #111
+      top: 0 
+
+
+.contact_detal
+  display: inline-block
+  margin-bottom: 50px
+  color: #757f8e
+  >span
+    display: block
+    font-size: 14px
+  h4
+    color: #212730
+    margin-bottom: 10px
+  img
+    width: 100%
+    margin: 15px 0  
+  .printing
+    display: inline-block
+    float: right
+
+    font-size: 12px
+    span 
+      color: #bababa
+      font-size: 12px
+
+
+
+.warning
+  color: #bf0d3e
+  font-size: 18px
+  span
+    font-size: 18px
+    display: inline
+    margin-right: 5px
+
+.bar_img
+  img
+    width: 100%    
+    margin-bottom: 50px
+
+.content
+  display: inline-block
+  margin-bottom: 150px
+  color: #757f8e
+  >span
+    display: block
+    font-size: 14px
+  h4
+    color: #212730
+    margin-bottom: 10px
+  h3
+    color: #212730
+    margin-bottom: 10px
+
+  h2  
+    color: #212730
+  
+  a
+    text-decoration: underline
+    &:hover
+      text-decoration: none     
+  img
+    width: 100%
+    margin: 15px 0  
+  
+  .black
+    color: #212730
+
+  .warning
+    color: #bf0d3e
+    font-size: 18px
+    span
+      font-size: 18px
+      display: inline
+      margin-right: 5px  
+  .notes
+    display: block
+    margin-top: 40px
+    color: #bdc1cb
+    border-top: 1px solid #f3f4f7
+    padding-top: 20px
+    margin-bottom: 30px
+    p
+      font-size: 12px
+      color: #bdc1cb
+      margin-bottom: 10px
+    
+    
+.all_stars_slider
+  display: block
+  width: 100%
+  margin-top: 40px
+  margin-bottom: 40px
+
+  a
+    border: 5px solid transparent
+    display: inline-block
+    width: calc(100% - 10px)
+    &:hover
+      border: 5px solid #bf0d3e
+    img
+      width: 100%
+      height: 220px
+      object-fit: cover
+
+
+  .owl-nav 
+    display: inline-block
+    position: absolute
+    top: -54px
+    right: 0
+    width: 59px
+   
+    .owl-prev 
+      display: inline-block
+
+      .sl_nav 
+        display: inline-block
+        font-size: 30px
+        color: #eaeaea
+        border-top: 10px solid transparent
+        border-right: 17px solid #e8eaf2
+        border-bottom: 10px solid transparent
+        margin-right: 13px
+        &:hover 
+          border-right: 17px solid #bcc5d1
+    .owl-next 
+      display: inline-block
+      .sl_nav 
+        display: inline-block
+        font-size: 30px
+        color: #eaeaea
+        margin-left: 10px
+        border-top: 10px solid transparent
+        border-left: 17px solid #e8eaf2
+        border-bottom: 10px solid transparent
+        margin-top: 10px
+        margin-left: 1px  
+        &:hover 
+          border-left: 17px solid 0#bcc5d1    
+
+.music_instrument
+  display: inline-block
+  border: 1px solid #f3f4f7
+  position: relative
+  -moz-transition: all 0.2s ease
+  -webkit-transition: all 0.2s ease
+  transition: all 0.2s ease
+  width: 100%
+  margin-bottom: 30px
+  img
+    width: 80%
+    max-width: 100%
+    display: table
+    margin: auto
+  &:hover  .music_instrument_hidden_block
+    opacity: 1
+  .music_instrument_hidden_block
+    position: absolute
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    background-color: rgba(255, 255, 255, 0.82)
+    opacity: 0  
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+    -webkit-flex-direction: column
+    -ms-flex-direction: column
+    flex-direction: column
+    -webkit-flex-wrap: nowrap
+    -ms-flex-wrap: nowrap
+    flex-wrap: nowrap
+    -webkit-justify-content: center
+    -ms-flex-pack: center
+    justify-content: center
+    -webkit-align-content: center
+    -ms-flex-line-pack: center
+    align-content: center
+    -webkit-align-items: center
+    -ms-flex-align: center
+    align-items: center
+    a
+      display: inline-block
+      width: 80%
+     
+     
+    p
+      display: inline-block
+      width: 80%
+     
+      span
+        font-size: 18px
+        font-weight: 500  
+
+
+.music_instrument_all
+  width: 100%
+  display: block
+  text-align: center
+  background-color: #f3f4f7
+  padding: 10px 0
+  margin-top: 20px
+  margin-bottom: 40px
+  color: #757f8e
+  font-size: 14px
+  font-weight: 500
+  text-transform: uppercase
+
+
+.registation_form
+  margin-bottom: 50px
+  font-size: 14px
+ 
+  label
+    color: #757f8e
+    font-size: 14px
+    display: block
+    margin-bottom: 5px
+    margin-top: 20px
+  .g-recaptcha
+    margin-top: 20px
+    margin-bottom: 20px  
+
+.vhod_from
+  margin-bottom: 100px
+  display: inline-block
+  h3
+    margin-bottom: 10px
+  li  
+    float: left
+    display: inline-block
+    margin-right: 10px
+
+
+.authorization_form
+  margin-bottom: 50px
+  font-size: 14px
+  margin-top: 15px
+ 
+  
+  .button 
+    display: inline-block
+    padding: 0 56px
+    margin-bottom: 0px
+    margin-top: 25px
+  
+  .check_wr
+    display: inline-block
+    width: 100%
+
+
+
+.restoration_form
+  margin-bottom: 150px
+  font-size: 14px
+ 
+  label
+    color: #757f8e
+    font-size: 14px
+    display: block
+    margin-bottom: 5px
+    margin-top: 20px
+  .button 
+    display: inline-block
+    padding: 0 26px
+    margin-bottom: 0px
+    margin-top: 25px
+
+.sravnenie_check_wr 
+  display: inline-block
+  margin-bottom: 20px
+  width: 100%
+  -webkit-column-count: 4 
+  -moz-column-count: 4
+  column-count: 4
+  label
+    color: #757f8e
+    font-size: 14px
+    display: block
+    margin-bottom: 5px
+    margin-top: 10px
+
+.clean_basket
+  font-size: 12px
+  color: #cdd2d9
+  margin-bottom: 15px
+  display: inline-block
+  i
+    position: relative
+    top: 2px
+ 
+.basket_table
+  margin-bottom: 0
+  th 
+  
+    color: #000000
+    font-size: 12px
+  .basket_img
+    img
+      width: 70px
+      height: 70px
+      object-fit: contain
+      border: 1px solid #f3f4f7
+  .basket_table_name
+    width: 220px   
+    display: inline-block
+    
+    font-weight: 500
+    color: #111
+  .basket_table_nalichie
+    color: #0dbfb9   
+  .basket_sale
+    font-weight: 500
+    color: #bf0d3e
+  .basket_sum
+    font-weight: 500
+    color: #111
+  .del_requisites 
+    color: #e9e9ef
+      
+
+.basket_total
+  border: 1px solid #f3f4f7
+  padding: 30px
+
+  div
+    display: block
+    margin: 0
+    font-size: 14px
+    color: #757f8e
+    text-align: right
+    margin-top: 5px
+
+    span
+      margin-left: 10px
+      width: 120px
+      text-align: left
+      display: inline-block
+      
+      &.price
+        font-size: 20px
+        font-weight: 500
+        color: #111
+     
+     
+       
+
+
+.basket_butt
+  a
+    display: inline-block
+    float: right
+
+    font-size: 12px
+    margin-left: 10px
+    margin: 10px
+    margin-bottom: 20px
+    span 
+      color: #bababa
+      font-size: 12px
+      margin-right: 5px
+  
+.contact-form
+  .sitebar_filter_select_wr
+    .jq-selectbox__select 
+      
+      height: 50px
+      line-height: 50px
+      font-size: 12px
+      color: #757f8e
+      padding-left: 20px
+      width: calc(100% - 55px)
+      border: 1px solid #e3e4e7
+    .jq-selectbox__trigger-arrow 
+      position: absolute
+      top: 18px
+      right: 16px
+
+.basket_form  
+  margin-bottom: 50px
+  font-size: 14px
+  background-color: #f5f6f8
+  padding: 20px
+  margin-top: 20px
+  margin-bottom: 100px
+  position: relative
+  
+  .oformit_zakaz 
+    display: inline-block
+    height: 45px
+    background-color: #bf0d3e
+    line-height: 45px
+    text-align: center
+    font-size: 14px
+    text-transform: uppercase
+    border: none
+    color: #fff
+    outline: none !important
+    border-radius: 20px
+    letter-spacing: 1px
+    cursor: pointer
+    margin-top: 6px
+   
+    margin-bottom: 20px
+    position: absolute
+    width: 265px
+    bottom: 18px
+    
+  .basket_total_korz
+    padding: 0
+    margin-top: 15px
+ 
+  label
+    color: #757f8e
+    font-size: 14px
+    display: block
+    margin-bottom: 5px
+    margin-top: 20px
+
+.basket_form_block_wr  
+  
+  display: block
+  color: #757f8e
+  margin-top: 10px
+ 
+  .warning
+    margin: 0
+    margin-top: 5px
+    a
+      text-decoration: underline
+  h4
+    margin-top: 0
+    color: #212730   
+    letter-spacing: 0px
+    font-size: 18px
+    margin-bottom: 10px
+  .radio_label
+    display: inline-block
+    margin-right: 15px
+    color: #212730  
+    margin-top: 3px
+    width: 100%
+  .jq-selectbox__select 
+  
+    height: 50px
+    line-height: 50px
+    font-size: 12px
+    color: #757f8e
+    padding-left: 20px
+    width: calc(100% - 55px)
+    border: 1px solid #e3e4e7
+  .jq-selectbox__trigger-arrow 
+    position: absolute
+    top: 18px
+    right: 16px
+   
+  
+.mar_t0
+  margin-top: 0!important
+  font-size: 12px
+
+.basket_form_total
+  border: 1px solid #f3f4f7
+  padding: 30px
+  margin-bottom: 100px
+  div
+    display: block
+    margin: 0
+    font-size: 14px
+    color: #757f8e
+    text-align: left
+    width: 250px 
+    margin-bottom: 5px
+
+    span
+      margin-left: 10px
+      width: 120px
+      line-height: 16px
+      display: inline-block
+      
+      float: right
+      
+      &.price
+        font-size: 18px
+        font-weight: 500
+        color: #111
+        line-height: 19px
+      i
+        margin-top: -1px
+
+  .button
+    float: right 
+    margin-top: -51px
+
+
+.button_main
+  display: inline-block
+  padding: 0 15px
+  height: 30px
+  background-color: #f3f4f7
+  line-height: 32px
+  text-align: center
+  font-size: 12px
+  text-transform: uppercase
+  border: none
+  color: #757f8e
+  outline: none !important
+  border-radius: 20px
+  letter-spacing: 1px
+  cursor: pointer
+  margin-top: 20px
+  &:hover
+    opacity: 0.8
+  span 
+    margin-right: 5px 
+
+
+.button_back_block
+  display: block
+  margin-bottom: 20px
+  a
+    float: right
+    &:first-child
+      float: left   
+  .button_white
+    margin-right: 10px      
+
+.product_zakaz_about
+  color: #757f8e
+  margin-top: 20px
+  display: inline-block
+  width: 100%
+  .product_zakaz_about_top
+    display: inline-block
+    background-color: #f3f4f7
+    width: calc(100% - 40px)
+    padding: 10px 20px
+    font-weight: 500
+    font-size: 14px
+    color: #333
+  
+  .product_zakaz_about_text
+
+    display: inline-block
+    width: calc(100% - 42px)
+    border: 1px solid #f3f4f7
+    padding: 20px
+    margin-top: -12px
+    position: relative
+    p
+      span
+        font-weight: 500
+        display: block
+      a 
+        
+        text-decoration: underline 
+
+.mb_50
+  margin-bottom: 50px!important
+
+.catalog_wrap
+  margin-bottom: 50px
+  .page_nav
+    margin-top: 30px
+
+
+.product_card.catalog_product_card 
+  margin-top: -1px;
+  &:hover
+    box-shadow: 0 0 19px 0px rgba(0, 0, 0, 0.18)
+    position: relative;
+    z-index: 10;
+    .product_card_img:hover + .button
+      opacity: 1
+    .button:hover
+      opacity: 1
+        
+  .product_card_hover_topelemet 
+
+    opacity: 1
+  .product_card_img
+    position: relative
+  .button 
+    display: inline-block
+    padding: 0 15px
+    height: 30px
+    background-color: #bf0d3e
+    line-height: 32px
+    text-align: center
+    font-size: 12px
+    text-transform: uppercase
+    border: none
+    color: #fff
+    outline: none !important
+    border-radius: 20px
+    letter-spacing: 1px
+    cursor: pointer
+    margin-top: 20px
+    position: absolute
+    left: calc(50% - 97px)
+    top: 121px
+    
+    opacity: 0
+  .product_card_button li a.product_card_buttont_utochnite 
+    
+    line-height: 39px
+    text-align: center
+    border-radius: 20px
+    cursor: pointer
+    height: 40px
+    position: relative
+    top: -2px
+    font-size: 12px;
+  .product_card_block_availability 
+    padding: 12px 25px!important
+  .product_card_buttont_credit:hover
+    background-color: #ef3124
+    width: auto
+    border-radius: 25px
+    padding: 0 14px
+    font-size: 12px
+    line-height: 42px
+  
+
+.descr
+  margin-bottom: 50px
+  p
+    color: #757f8e
+    &:first-child
+      margin-top: 0  
+
+.prodlisrt_wr    
+  border: 1px solid #f3f4f7
+  width: 100%
+  display: inline-block
+  -moz-transition: all 0.2s ease
+  -webkit-transition: all 0.2s ease
+  transition: all 0.2s ease
+  margin-top: -6px
+  .prodlisrt_img
+    width: calc(50% - 40px)
+    padding: 20px
+    display: inline-block
+    float: left
+    img
+      width: 130px
+      height: 110px
+      object-fit: contain 
+    a 
+      display: inline-block
+      float: right
+      width: calc(100% - 150px)
+      color: #000000
+      font-weight: 500
+
+.prodlisrt_inform_accordion
+  .submenu
+    display: none
+    ul
+      display: inline-block
+      width: 100%
+      p
+        display: inline-block
+        width: 70%
+        float: left
+        color: #79818e
+        font-size: 12px
+        font-weight: 400
+        margin: 0
+      span
+        display: inline-block
+        width: 30%
+        float: left
+        color: #79818e
+        font-size: 12px
+        &.product_none
+          color: #ef3124  
+
+        &.product_in  
+          width: 16px
+          height: 16px
+          background-color: #0dbf69
+          border-radius: 50%
+          
+          
+          span
+            color: #fff
+            font-size: 8px
+            text-align: center
+            line-height: 18px
+            width: 100%
+            display: inline-block
+
+        &.product_in_col  
+          span
+            padding: 0px 5px 
+            background-color: #31a9df
+            font-size: 12px
+            color: #fff
+            position: relative
+            top: -4px
+            width: auto
+
+  .dropdown
+    >a 
+      color: #000000
+      font-weight: 500
+      p
+        font: 14px
+        color: #000000
+        margin: 0
+        margin-bottom: 10px
+        span
+          font-size: 7px
+          color: #ccc
+          margin-left: 10px
+
+.prodlisrt_inform
+  padding: 20px
+  width: calc(25% - 42px)
+  display: inline-block
+  float: left 
+  border-left: 1px solid #f3f4f7
+  border-right: 1px solid #f3f4f7    
+  min-height: 115px      
+  >span
+    font-size: 12px
+    color: #bfc3c8
+    display: block
+    margin-bottom: 10px
+
+
+.prodlisrt_price
+  padding: 20px
+  width: calc(25% - 42px)
+  display: inline-block
+  float: left 
+  .product_card_button 
+    display: inline
+    width: 100%
+    float: right
+    position: relative
+    margin-top: 8px
+  .product_card_price 
+    display: inline-block
+    width: auto
+    float: left
+    margin-top: 7px
+  .product_card_button li .product_card_buttont_basket:hover
+   
+    position: relative
+   
+    padding: 0 12px
+
+
+
+.prodline_wr    
+  border: 1px solid #f3f4f7
+  width: 100%
+  display: inline-block
+  margin-bottom: 20px
+  -moz-transition: all 0.2s ease
+  -webkit-transition: all 0.2s ease
+  transition: all 0.2s ease
+  position: relative
+  &:hover
+    box-shadow: 0 0 9px 2px rgba(0, 0, 0, 0.10);
+  &:hover > .product_card_hover_topelemet
+    display: block
+  .product_card_hover_topelemet
+    position: absolute
+    top: 8px
+    font-size: 23px
+    display: none
+    left: 20px
+  .prodline_img
+    width: calc(50% - 40px)
+    padding: 20px
+    display: inline-block
+    float: left
+    position: relative
+
+    img
+      width: 180px
+      height: 120px
+      object-fit: contain
+      margin-top: 5px
+    .product_card_rating 
+      position: relative
+      top: -3px
+      font-size: 13px
+      left: 114px
+    .prodline_prod_name   
+      display: inline-block
+      float: right
+      width: calc(100% - 220px)
+
+      a 
+        font-weight: 500
+        color: #000000
+        margin-bottom: 10px
+        display: inline-block
+        
+      p 
+        color: #79818e 
+        margin-bottom: 0
+        margin-top: 5px
+
+        a
+          color: #bf0d3e
+          font-weight: 400
+          text-decoration: underline
+          margin-bottom: 0
+
+.prodline_inform_accordion
+  .submenu
+    display: none
+    ul
+      display: inline-block
+      width: 100%
+      li
+        display: inline-block
+        width: 100%
+      p
+        display: inline-block
+        width: 70%
+        float: left
+        color: #79818e
+        font-size: 12px
+        font-weight: 400
+        margin: 0
+        &.dost
+          width: 100% 
+
+      span
+        display: inline-block
+        width: 30%
+        float: left 
+        color: #79818e
+        font-size: 12px
+        &.product_none
+          color: #ef3124  
+
+        &.product_in  
+          width: 16px
+          height: 16px
+          background-color: #0dbf69
+          border-radius: 50%
+          
+          
+          span
+            color: #fff
+            font-size: 8px
+            text-align: center
+            line-height: 18px
+            width: 100%
+            display: inline-block
+
+        &.product_in_col  
+          span
+            padding: 0px 5px 
+            background-color: #31a9df
+            font-size: 12px
+            color: #fff
+            position: relative
+            top: -4px
+            width: auto
+
+  .dropdown
+    >a 
+      color: #000000
+      font-weight: 500
+      span.acor_plus
+        display: inline-block
+        font-size: 12px
+        width: 12px
+        height: 12px
+        border: 1px solid #ccc
+        float: left
+        text-align: center
+        line-height: 13px
+        margin: 0
+        margin-right: 5px
+        position: relative
+        
+        top: 2px
+      p
+        font: 14px
+        color: #000000
+        margin: 0
+        margin-bottom: 5px
+        display: inline-block
+        float: left
+        width: calc(100%)
+        span
+          font-size: 11px
+          color: #ccc
+          margin-left: 10px
+          float: right
+          &.icon-42
+            color: #0dbfb9
+
+.prodline_inform
+  padding: 20px
+  width: calc(25% - 42px)
+  display: inline-block
+  float: left 
+  border-left: 1px solid #f3f4f7
+  border-right: 1px solid #f3f4f7    
+  min-height: 149px      
+  >span
+    font-size: 12px
+    margin-bottom: 10px
+    display: block
+    margin-top: 17px
+    color: #bfc3c8
+
+
+
+.prodline_price
+  padding: 20px
+  width: calc(25% - 42px)
+  display: inline-block
+  float: left 
+  .product_card_button 
+    display: inline
+    width: 100%
+    float: right
+    position: relative
+    margin-top: 8px
+  .product_card_price 
+    display: inline-block
+    width: auto
+    float: left
+    margin-top: 17px
+  .product_card_button li .product_card_buttont_basket:hover
+   
+    position: relative
+   
+    padding: 0 12px    
+
+
+.naliche_table   
+  .name
+    width: 150px
+    display: inline-block
+  th 
+   
+    font-size: 12px
+  tr
+    td 
+
+      font-size: 12px
+  .open_all_table  
+    display: inline-block
+    font-size: 16px
+    border: 1px solid #ccc
+    width: 15px
+    height: 15px
+    line-height: 15px
+    text-align: center
+    font-weight: 500
+    margin-right: 5px
+    cursor: pointer
+    position: relative
+    top: -13px
+
+.hiden_nal_table
+  display: inline-block
+  width: 100%    
+
+.hidden_nal_table  
+  th 
+   
+    font-size: 12px
+    background-color: #f3f4f7
+  tr
+
+    td 
+
+      font-size: 12px
+      padding: 4px 5px
+      padding-left: 15px
+
+  .in_nal_basket
+    display: inline-block
+    width: 73px
+
+.nalichie_wraper
+  width: 100%
+  overflow-x: auto
+  display: inline-block
+  margin-bottom: 25px
+
+.nalichie_tuning
+  margin-bottom: 15px
+  display: block
+  font-size: 12px
+  span
+    color: #bababa
+    margin-right: 0px
+    position: relative
+    top: 1px
+
+.cont_table.naliche_table.table_open 
+   
+  border: none
+
+
+
+.nal_but_wr
+  a
+    margin-top: 0
+    margin-right: 10px
+    margin-bottom: 20px
+
+.nalichie_redaction_wr
+  margin-bottom: 100px
+  padding: 20px
+  border: 1px solid #f3f4f7
+  span
+    font-size: 12px
+    color: #757f8e
+    margin-bottom: 10px
+    display: block
+  li
+    margin-bottom: 20px
+    a
+      width: 100%
+      border: 1px solid #f3f4f7
+      text-align:  center
+      padding: 10px 0
+      display: inline-block
+      font-size: 14px
+      color: #757f8e
+      font-weight: 500
+      &.active
+        background-color: #f3f4f7
+
+.vertical 
+  transform: rotate(-90deg)
+  font-family: sans-serif
+  font-size: 14px
+  font-weight: bold
+  line-height: 0
+  text-transform: uppercase
+  white-space: nowrap
+  position: relative
+  display: block
+  width: 100%
+  position: relative
+  top: 500px
+  letter-spacing: 6px
+  color: #47505e
+  span.icon-1
+  
+    text-align: left
+    background-color: #0dbf69
+    text-align: center
+    vertical-align: middle
+    display: inline-block
+    position: absolute
+    width: 117px
+    height: 26px
+    left: -224px
+    top: -8px
+    padding-top: 4px
+    font-size: 19px
+    color: #fff
+
+
+        
+
+.date_actia
+  font-size: 12px
+  color: #bbbcc4
+  display: block
+  margin-bottom: 15px
+        
+.button_main
+  text-decoration: none!important        
+
+
+.open_menu_md
+  display: inline-block
+  position: relative
+  height: 40px
+  width: 40px
+  background-color: #bf0d3e
+  text-align: center
+  border-radius: 50%
+
+
+.nav-trigger 
+  width: 50px
+  height: 50px
+  position: absolute
+  background: transparent
+  border: none
+  vertical-align: middle
+  padding: 10px
+  margin: 0
+  cursor: pointer
+  margin-top: -10px
+  z-index: 1004
+  
+  &:focus 
+    outline: 0
+
+  
+    
+
+  &:before 
+    content: ''
+    opacity: 0
+    width: 0
+    height: 0
+    border-radius: 50%
+    position: relative
+    top: 50%
+    left: 50%
+    background: #fff
+    transform: translate(-50%, -50%)
+    transition: all 0.4s ease
+  
+  span 
+    display: block
+    position: relative
+    &:before,
+    &:after 
+      content: ''
+      position: absolute
+      left: 0
+    
+    &:before 
+      top: -8px
+    
+    &:after 
+      bottom: -8px
+
+  span,
+  span:before,
+  span:after 
+    width: 100%
+    height: 4px
+    background: #bf0d3e
+    transition: all 0.4s ease
+
+  &.is-active 
+    &:before 
+      display: none
+    
+    span 
+      background: transparent
+      &:before 
+        top: 0
+        transform: rotate(225deg)
+      
+      &:after 
+        bottom: 0
+        transform: rotate(-225deg)
+
+.nav-trigger.is-active span:before,
+.nav-trigger.is-active span:after 
+  background: #fff
+
+
+// popup
+
+.popup
+  width: 800px
+  padding: 15px
+  display: none
+  background-color: #fff
+  h3
+    margin-top: 0
+    color: #111
+    .popup_pechat
+      text-transform: inherit;
+      float: right
+
+
+
+
+.fancybox-close
+  background-image: url(../img/hrest.svg)
+  width: 17px
+  height: 17px
+  right: -27px
+  
+
+.product_sravnenie_popup_wr  
+  border: 1px solid #f3f4f7
+  width: calc(100% - 40px)
+  padding: 20px
+  display: inline-block
+  img
+    border: 1px solid #f3f4f7
+    width: 100px
+    height: 100px
+    object-fit: contain
+    float: left
+    display: inline-block
+  .product_sravnenie_popup_about
+    display: inline-block
+    width: calc(100% - 120px)
+    float: right
+    >a
+      display: block
+      font-size: 18px
+      font-weight: 500
+      text-decoration: underline
+      margin-bottom: 10px
+
+
+.popup_button_wr
+  margin-top: 20px
+  a
+    margin-right: 10px
+
+.button_green
+  display: inline-block
+  width: auto
+  height: 30px
+  background-color: #0dbf69
+  line-height: 32px
+  text-align: center
+  font-size: 12px
+  text-transform: uppercase
+  border: none
+  color: #fff
+  outline: none!important
+  border-radius: 20px
+  letter-spacing: 1px
+  cursor: pointer
+  padding: 0 20px
+  &:hover
+    opacity: 0.8      
+
+
+.button_yelow
+  display: inline-block
+  width: auto
+  height: 30px
+  background-color: #fed224
+  line-height: 32px
+  text-align: center
+  font-size: 12px
+  text-transform: uppercase
+  border: none
+  color: #fff
+  outline: none!important
+  border-radius: 20px
+  letter-spacing: 1px
+  cursor: pointer
+  padding: 0 20px
+  &:hover
+    opacity: 0.8 
+  span 
+    margin-right: 5px 
+
+
+.fancybox-opened .fancybox-skin 
+  background-color: #fff!important
+  border-radius: 0
+
+.open_hidden_mobile_text
+  font-size: 12px
+  color: #bdc1cb
+  text-decoration: none!important
+  cursor: pointer
+  display: none
+  margin-top: 10px
+  &.active > .icon-4
+    transform: rotate(180deg)
+    display: inline-block
+
+
+  span
+    font-size: 7px
+  .but_text
+    font-size: 12px  
+
+
+.open_hidden_pc_text
+  font-size: 12px
+  color: #bdc1cb
+  text-decoration: none!important
+  cursor: pointer
+  
+  margin-top: 10px
+  &.active > .icon-4
+    transform: rotate(180deg)
+    display: inline-block
+
+
+  span
+    font-size: 7px
+  .but_text
+    font-size: 12px  
+
+.hidden_pc_text
+  display: none
+
+
+.icon_catalog
+  .owl-carousel  
+    .owl-nav 
+      display: block
+      width: 59px
+      margin: 0 auto
+      margin-top: 15px
+      position: relative
+      right: 0px
+      display: none
+    
+      .owl-prev 
+        display: inline-block
+
+        .sl_nav 
+          display: inline-block
+          font-size: 30px
+          color: #eaeaea
+          border-top: 10px solid transparent
+          border-right: 17px solid #e8eaf2
+          border-bottom: 10px solid transparent
+          margin-right: 13px
+          &:hover 
+            border-right: 17px solid #bcc5d1
+      .owl-next 
+        display: inline-block
+        .sl_nav 
+          display: inline-block
+          font-size: 30px
+          color: #eaeaea
+          margin-left: 10px
+          border-top: 10px solid transparent
+          border-left: 17px solid #e8eaf2
+          border-bottom: 10px solid transparent
+          margin-top: 10px
+          margin-left: 1px    
+          &:hover 
+            border-left: 17px solid #bcc5d1   
+
+
+.personal_room_open_mobile_butt
+  background-color: #f3f4f7
+  padding: 15px 20px
+  color: #757f8e
+  display: none
+  cursor: pointer
+  &.active > .icon-4
+    transform: rotate(180deg)
+  &.active
+    margin-bottom: 0  
+  .icon-4
+    float: right
+    font-size: 8px
+    line-height: 25px
+    display: inline-block
+  .icon-95
+    font-size: 12px  
+
+.catalog_sort
+  display: inline-block
+  width: calc(100% - 40px)
+  padding: 11px 20px 9px
+  margin-bottom: 30px
+  border: 1px solid #f3f4f7
+  .main_sort > span
+    font-size: 12px
+    color: #111
+    display: inline-block
+    float: left
+    margin-right: 20px
+    position: relative
+    top: 4px
+
+  .catalog_sort_ulsort
+    display: inline-block
+    float: left
+
+    li
+      display: inline-block
+      margin-right: 25px
+      a
+        color: #a5aab5
+        font-size: 14px
+        &.active
+          font-size: 14px
+          color: #bf0d3e
+          font-weight: 500
+
+  
+  .sort_block > span
+    font-size: 12px
+    color: #111
+    display: inline-block
+    float: left
+    margin-right: 10px
+    position: relative
+    top: 5px
+    margin-left: 20px
+
+  .sort_block_ul
+    display: inline-block
+    float: left
+
+    li
+      display: inline-block
+      margin-right: 15px
+      a
+        color: #a5aab5
+        font-size: 14px
+        text-decoration: underline
+        &.active
+          font-size: 14px
+          color: #bf0d3e
+          font-weight: 500   
+          text-decoration: none
+
+  .sort_page
+    display: inline-block
+    float: right
+    margin-left: 30px
+    margin-top: -4px
+
+
+    li
+      display: inline-block
+      margin-right: 15px
+      a
+        color: #a5aab5
+        font-size: 14px
+        
+        span
+          font-size: 13px
+        &.active
+            background-color: #bf0d3e
+            color: #fff
+            width: 33px
+            display: inline-block
+            text-align: center
+            height: 33px
+            line-height: 35px
+            border-radius: 50%
+                                  
+
+
+.mult_brand_wr
+  display: inline-block
+  float: left
+  background-color: #f3f4f7
+  margin-top: -11px
+  padding: 10px 0
+  margin-bottom: -10px
+  margin-left: 20px
+  margin-right: 20px
+
+
+
+
+.sort_top_bottom
+  display: inline-block
+  position: relative
+  width: 6px
+  height: 12px
+  .top
+    position: absolute
+    top: -9px
+    margin-right: -2px
+    display: inline-block
+    left: 0
+    &.actived > span
+      color: #bf0d3e
+    span
+      font-size: 4px
+      transform: rotate(180deg)
+      display: inline-block
+  .bottom 
+    position: absolute
+    display: inline-block
+    left: 0
+    &.actived > span
+      color: #bf0d3e
+    span
+      font-size: 4px 
+
+
+.brand_sort
+  display: inline-block
+  margin-right: 10px
+  font-size: 12px
+  float: left
+  position: relative
+  top: 5px
+  margin-left: 37px   
+
+.sort_but_mob
+  background-color: #f3f4f7
+  padding: 15px 20px
+  color: #757f8e
+  display: none
+  cursor: pointer
+  font-size: 12px
+  &.active > .icon-4
+    transform: rotate(180deg)
+  &.active
+    margin-bottom: 0  
+  .icon-4
+    float: right
+    font-size: 8px
+    line-height: 25px
+    display: inline-block
+  .icon-96
+    font-size: 10px    
+
+.popup form
+  width: 100%   
+  font-size: 14px
+ 
+  label
+    color: #757f8e
+    font-size: 14px
+    display: block
+    margin-bottom: 5px
+    margin-top: 20px
+  .button 
+    display: inline-block
+    padding: 0 41px
+
+.popup_descr
+  display: block
+  margin-top: -15px
+  margin-bottom: 15px
+  color: #111    
+
+#prod_prosmotr
+  width: 1000px  
+
+#prod_prosmotr .product_about 
+  display: block
+  width: 100%
+  margin-bottom: 0
+#prod_prosmotr h2 
+  font-size: 30px
+  font-weight: 500
+  margin-top: 0
+
+
+.naliche_table .fold 
+  display: none
+  >td
+    padding: 0
+
+.cont_table.naliche_table.table_open
+  margin-bottom: 0    
+
+
+.nalichie_serch
+  input
+    border: none
+    border-bottom: 1px solid #ccc
+    position: relative
+    width: 400px
+    height: 30px
+    margin-bottom: 30px
+    padding-right: 30px
+  button 
+    border: none
+    background-color: #fff
+    color: #ccc
+    margin-left: -27px
+    position: relative
+    font-size: 15px
+
+
+.price_tel
+  margin: 0
+  font-size: 24px
+  color: #0dbf69
+  font-weight: 400
+  margin-bottom: 1px
+
+.footer_email
+  text-decoration: underline
+  color: #fff
+  margin-left: 0!important
+  padding-left: 0  !important
+
+.visib
+  display: block  
+
+.open_hidden_header_shop_time .button_open_all_about_shop
+  display: none
+
+
+.prodlisrt_price .product_card_button li a.product_card_buttont_utochnite
+  line-height: 40px
+  text-align: center
+  border-radius: 20px
+  cursor: pointer
+  height: 40px
+  position: relative
+  top: 0
+
+.bespl_dost 
+  font-size: 14px
+  font-weight: 500
+  display: block
+  color: #757f8e
+  margin-top: 10px 
+
+.product_card_print_but
+  font-size: 12px
+  margin-left: 15px
+  &:before
+    content: "|"
+    margin-right: 49px
+    color: #f3f4f7
+    font-size: 21px
+    position: relative
+    top: 1px
+    line-height: 0px
+  
+  span 
+    color: #bfbfbf 
+    margin-right: 4px
+
+.product_reviews_hiden_text
+  display: none
+  font-size: 12px!important
+  color: #757f8e!important
+  font-weight: 400!important
+  margin-bottom: 0   
+
+.open_product_reviews_hiden_text.active
+  font-size: 14px!important
+  color: #bf0d3e!important
+  font-weight: 400!important
+  line-height: 11px!important
+  text-decoration: underline!important
+
+.history_order_about .status_date
+    position: absolute;
+    
+    right: 10px
+    top: 29px
+    padding: 0 5px
+    font-size: 11px
+    color: #757f8e
+    font-weight: 400
+
+
+
+.ml_5
+  margin-left: 5px
+
+.product_card_buttont_credit
+  position: relative
+  &:hover > p
+    display: inline-block
+
+  p
+    
+    position: absolute
+    z-index: 1
+    color: #333
+    width: 127px
+    font-size: 11px
+    margin: 0
+    left: 0
+    top: 26px
+    display: none
+
+.product_card.little_card.catalog_product_card
+  .product_card_buttont_credit
+    position: relative
+    &:hover > p
+      display: inline-block
+
+    p
+      display: none
+      position: absolute
+      z-index: 1
+      color: #333
+      width: 100px
+      font-size: 10px
+      margin: 0
+      left: 13
+      top: 26px
+      
+
+.brand_foto
+  img
+    width: 100%
+    border: 1px solid #f3f4f7    
+    margin-bottom: 30px  
+
+.descr    
+  .button_main
+    display: table
+    margin-top: 20px
+
+.name
+  text-decoration: underline
+
+
+.popup_form_wr
+  width: 500px
+
+.itog_popup_korz
+  font-weight: 500
+  font-size: 24px
+  margin-bottom: 10px
+  span
+    font-size: 14px
+    color: #757f8e
+    font-weight: 400  
+    margin-right: 5px
+
+.button_redd
+  
+
+  display: inline-block
+  width: auto
+  height: 30px
+  background-color: #ef3124
+  line-height: 32px
+  text-align: center
+  font-size: 12px
+  text-transform: uppercase
+  border: none
+  color: #fff
+  outline: none !important
+  border-radius: 20px
+  letter-spacing: 1px
+  cursor: pointer
+  padding: 0 20px   
+
+#prod_prosmotr
+  h2
+    font-size: 24px  
+
+  .product_card_button
+    ul 
+      display: inline-block
+      float: left
+  .buy_one_click 
+    display: inline-block
+    font-size: 16px
+    float: right   
+    margin-top: 7px
+  h3
+    margin-top: 20px  
+
+.popup::-webkit-scrollbar
+  width: 7px
+  margin-right: 10px
+  cursor: pointer
+
+.popup::-webkit-scrollbar-track
+  -webkit-border-radius: 0px
+  border-radius: 0px
+  margin-right: 10px
+
+.popup::-webkit-scrollbar-thumb
+  -webkit-border-radius: 5px
+  border-radius: 0px
+  background-color: #d4d8e0
+  margin-right: 10px
+  &:window-inactive
+    background-color: #d4d8e0
+
+
+
+#pechat_popup
+  width: 800px 
+  .popup_pechat
+    float: right
+    margin-top: 7px
+  .owl-nav
+    display: none
+  .product_about
+    margin-top: 15px    
+
+#pechat_popup .product_about 
+  display: block
+  width: 100%
+  margin-bottom: 0
+#pechat_popup h2 
+ 
+  margin-top: 0
+#pechat_popup
+  h2
+    font-size: 24px  
+
+  .product_card_button
+    ul 
+      display: inline-block
+      float: left
+  .buy_one_click 
+    display: inline-block
+    font-size: 16px
+    float: right   
+    margin-top: 7px
+  h3
+    margin-top: 20px  
+
+
+.basket_1366
+  .header_control_block .footer_but_basket img 
+    width: 51px
+    position: relative
+    top: 2px
+    
+    height: auto
+    display: table
+    margin: 0 auto
+    margin-bottom: 10px
+
+  .header_control_block .footer_but_basket .footer_but_basket_colproduct 
+    position: absolute
+    width: 30px
+    font-size: 12px
+    height: 30px
+    background-color: #bf0d3e
+    color: #fff
+    font-weight: 400
+    line-height: 30px
+    text-align: center
+    border-radius: 50%
+    left: 55px
+    top: 1px
+
+
+
+.katalog_open_1366,.katalog_open_1366_close, .but_1366
+  display: none
+
+.piano_icon
+  img 
+    width: 39px!important
+    margin-top: 22px
+    margin-left: 0
+    display: inline-block!important 
+
+.drump_icon  
+  img 
+    width: 39px!important
+    margin-top: 22px
+    margin-left: 0
+    display: inline-block!important 
+
+
+
+
+
+
+.basket_total div:nth-child(2)
+  margin-top: 11px
+
+.table_red_row
+  background-color: #f6f4ec
+
+.beruz
+  color: #0dbfb9
+
+.hidden_nal_table th
+  color: #757f8e  
+
+
+
+#val
+  width: 40%
+  float: left
+  height: 30px 
+  line-height: 30px
+  color: #111
+  text-align: center
+  margin-top: 5px  
+
+#val2
+  width: 40%
+  float: right
+  height: 30px 
+  line-height: 30px
+  color: #111 
+  text-align: center
+  margin-top: 5px   
+
+label.label_newform
+  font-size: 14px
+  color:#757f8e
+  display: block
+  width: 100%
+  margin-top: 8px   
+
+.aut_reg
+  float: right
+  font-size: 14px
+  text-decoration: underline 
+  display: inline-block
+  margin-bottom: 10px 
+  margin-top: 4px
+
+
+.aut_zabil
+  float: left
+  font-size: 14px
+  text-decoration: underline 
+  display: inline-block
+  margin-bottom: 10px 
+  margin-top: 4px 
+
+
+.tultip_main_wr
+  display: inline-block
+  position: relative
+  width: 40px
+  float: left
+  .open_tultip
+    font-size: 18px  
+    color: #d7dcdf
+    display: inline-block
+    margin-top: 15px
+    margin-left: -10px
+    cursor: pointer
+    .icon-8
+      font-size: 5px
+      float: right
+      position: relative
+      top: 8px
+      left: 4px
+
+  .tultip_main
+    position: absolute
+    width: 240px
+    background-color: #f3f4f7
+    display: inline-block
+    z-index: 100
+    padding: 10px  20px 22px
+    left: -100px
+    top: 52px
+    display: none
+    p
+      margin: 0 0 4px
+      font-size: 12px
+      color: #212730
+    label
+      display: inline-block
+      width: 100%
+      font-size: 12px
+      margin-top: 10px
+      color: #212730
+  
+
+  .jq-selectbox__select 
+    padding: 0 35px 0 10px
+    border-radius: 0px
+    background: #fff
+    box-shadow: none
+    text-shadow: none
+    border: none
+    height: 40px
+    line-height: 40px
+    font-size: 14px
+    color: #a5aab5
+    float: left
+    box-shadow: none !important
+    width: 190px
+    .jq-selectbox__trigger-arrow 
+   
+      top: 14px
+  .jq-selectbox__dropdown 
+    top:  40px
+    width: 100%!important
+ 
+    
+.product_card_dost
+  position: absolute
+  bottom: 2px
+  display: none
+  span
+    font-size: 12px
+    display: inline-block
+    width: 100%
+    color: #bf0d3e
+  p  
+    font-size: 12px
+    display: inline-block
+    width: 100%  
+    margin: 0
+    color: #9ca4af
+    position: relative
+    top: -3px
+
+.product_card:hover > .product_card_dost
+  display: block
+
+.product_card.little_card.catalog_product_card
+  height: 425px
+  position: relative  
+
+#prod_prosmotr h2
+  .articul
+    font-size: 12px
+    color: #bfc3c8
+    display: block
+    width: 100%
+    font-weight: 400
+    margin-bottom: -5px
+    margin-left: 2px 
+
+.articul
+  font-size: 12px
+  color: #bfc3c8
+  display: block
+  width: 100%
+  font-weight: 400
+
+
+.naliche_table
+  
+
+  th 
+    font-size: 12px
+    background-color: #bf0d3e
+    color: #fff
+  .name
+    text-decoration: none
+    color: #000
+  .beruz 
+    color: #fff
+    background-color: #bf0d3e
+    padding: 5px
+  .icon-37
+    color: #0dbf69
+    font-size: 19px 
+
+
+.naliche_table.table_open
+  th 
+    font-size: 12px
+    background-color: #dde0e7
+    color: #000
+    font-weight: 500
+    padding-left: 4px
+    text-align: center
+  tr
+    font-size: 11px
+    background-color: #f3f4f7
+    color: #000
+    td
+      color: #000
+      padding-left: 4px
+      text-align: center
+  .center
+    text-align: center
+  .right
+    text-align: right  
+      
+
+.nalichie_tuning span 
+  color: #bf0d3e
+  margin-right: 0px
+  position: relative
+  top: 2px
+  font-size: 14px
+
+span.red
+  color: #bf0d3e
+  font-size: 14px
+  margin-bottom: 30px
+  display: block
+  margin-top: -20px
+
+
+
+.popup h2
+  .articul
+    font-size: 12px
+    color: #bfc3c8
+    display: block
+    width: 100%
+    font-weight: 400
+    margin-bottom: -5px
+    margin-left: 2px  
+
+.pechat_popu_header
+  display: inline-block
+  width: 100%
+  padding-bottom: 20px
+  margin-bottom: 20px
+  border-bottom: 1px solid #ccc
+  >img
+    width: 300px 
+    display: inline-block
+    float: left
+    margin-right: 80px
+    margin-top: -15px
+  .number_wr
+    width: 330px
+    display: inline-block
+    float: left
+    >span
+      font-size: 24px
+      font-weight: 500
+      display: inline-block
+      width: 100%
+      margin-bottom: 5px
+      color: #000  
+    >p
+      margin: 0
+      font-size: 12px
+      color: #000  
+      span
+        font-size: 11px
+        color: #a8a8a8
+        display: inline-block
+        width: 100%
+  .pechat_popup_but
+    width: 50px
+    float: left
+    height: 50px
+    line-height: 51px
+    background-color: #0dbf69
+    text-align: center
+    color: #fff
+    border-radius: 50%
+
+.oformit_zakaz
+  display: inline-block
+  height: 45px
+  background-color: #bf0d3e
+  line-height: 45px
+  text-align: center
+  font-size: 14px
+  text-transform: uppercase
+  border: none
+  color: #fff
+  outline: none !important
+  border-radius: 20px
+  letter-spacing: 1px
+  cursor: pointer
+  margin-top: 6px
+  width: 100%
+  margin-bottom: 20px
+
+
+.pechat_zakaz
+  font-size: 12px
+  span
+    color: #ccc
+    position: relative
+    top: 1px  
+
+.basket_table
+  margin-bottom: 80px
+
+.basket_total_korz
+  background-color: #f5f6f8
+  padding: 20px 30px
+  h3 
+    margin-top: 0
+    margin-bottom: 10px
+  .punkt_total
+    display: inline-block
+    width: 100%
+    height: 30px
+    p
+      width: 45%   
+      display: inline-block
+      float: left
+      margin: 0
+      font-size: 12px
+      color: #757f8e
+
+
+    span
+      float: right
+      width: 50%    
+    .kol_total
+      font-size: 12px
+      color: #757f8e
+    .price
+      font-weight: 500
+      font-size: 20px
+      line-height: 7px 
+    .total_korz_econom
+      font-size: 16px
+      font-weight: 500
+      padding: 0 10px
+      background-color: #fff000   
+      float:  left
+      width:  auto
+      line-height: 23px
+      margin-top: -8px
+      margin-left: 5%
+
+.prodline_inform_accordion .submenu 
+   
+  max-height: 134px;
+
+
+.st0
+  fill: #a1a8ba
+  
+.svg_icon  
+  width: 43px
+  display: table
+  margin: 2px auto -19px
+  height: 37px
+
+.icon_catalog_link:hover > i .st0 
+  fill: #222
+
+.sitebar_tab_close 
+  display: none 
+
+
+#utochnit_popup
+  width: 1200px
+  table
+    width: 100%
+    .basket_img img
+      width: 70px
+      height: 70px
+      object-fit: contain
+      border: 1px solid #e2e2e2
+
+  .utochnit_popup_prod_name
+    width: 190px
+    a
+      font-weight: 500
+      color: #111
+  .prodlisrt_inform 
+    padding: 0px
+    width: 263px
+    display: inline-block
+    float: left
+    border-left: none
+    border-right: none
+    min-height: 0
+    margin-top: 10px
+  .prodline_inform_accordion .submenu ul p 
+    display: inline-block
+    width: 140px
+    &.dost
+      width: 100%
+      margin-bottom: 10px
+  .prodline_inform_accordion .submenu ul > li> span
+    display: inline-block
+    width: 120px    
+  .prodline_inform_accordion .submenu ul span.product_in
+    width: 16px!important
+  .product_card_button li .product_card_plus
+    background-color: #fff
+    color: #d4d8e0
+    border: 2px solid
+    font-size: 31px
+    line-height: 40px
+    width: 38px
+    height: 38px
+    position: relative
+    top: 6px
+  th 
+   
+    color: #111111
+  tr.active
+    background-color: #f3f4f7
+
+@media only screen and (max-width : 1200px)
+  #utochnit_popup
+    width: 900px
+
+    
+@media only screen and (max-width : 992px)
+  #utochnit_popup
+    width: 700px
+    table
+      width: 1000px
+      margin-top: 30px
+    .utochnit_popup_table_wr
+      width: 100%
+      overflow-x: auto  
+
+@media only screen and (max-width : 766px)
+  #utochnit_popup
+    width: calc(100% - 40px)     
+    padding: 20px
